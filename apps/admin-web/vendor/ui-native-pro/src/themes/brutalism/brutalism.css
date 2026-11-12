@@ -1,0 +1,26 @@
+@layer theme {
+  :root {
+    @variant light {
+      --accent: var(--foreground);
+      --accent-foreground: var(--background);
+      --radius: 0px;
+      --field-radius: 0px;
+      --field-border-width: 1px;
+      --field-border: var(--border);
+      --surface-shadow: 0 0 0 0 transparent;
+      --overlay-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px -1px rgba(0, 0, 0, 0.06), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+      --field-shadow: 0 0 0 0 transparent;
+    }
+    @variant dark {
+      --accent: var(--foreground);
+      --accent-foreground: var(--background);
+      --radius: 0px;
+      --field-radius: 0px;
+      --field-border-width: 1px;
+      --field-border: var(--border);
+      --surface-shadow: 0 0 0 0 transparent;
+      --overlay-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.06), 0px 1px 2px -1px rgba(255, 255, 255, 0.06), 0px 2px 4px 0px rgba(255, 255, 255, 0.04);
+      --field-shadow: 0 0 0 0 transparent;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@layer components {
+  /** All `data-[...]:` prefixed utilities stay in calendar.styles.ts: data
+     * selectors are Tailwind variants and cannot be applied to custom CSS
+     * classes. Only the plain base styles live here.*/
+  .calendar__root {
+    width: 100%;
+  }
+  .calendar__header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(var(--spacing) * 2);
+    padding-bottom: calc(var(--spacing) * 4);
+    padding-inline-start: calc(var(--spacing) * 2);
+  }
+  /** The heading fills the row (`flex: 1`), so without an explicit alignment the
+     * title follows its content script and can hug the nav buttons in RTL. RN
+     * Text resolves `text-align: left` against layout direction, so this means
+     * "start" — the title stays on the opposite side from the nav in both
+     * directions.*/
+  .calendar__heading {
+    flex: 1;
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-family: var(--font-medium);
+    color: var(--color-foreground);
+    text-align: left;
+  }
+  .calendar__nav-button {
+    width: calc(var(--spacing) * 9);
+    height: calc(var(--spacing) * 9);
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-3xl);
+  }
+  .calendar__header-cell {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: calc(var(--spacing) * 2);
+  }
+  .calendar__header-cell-label {
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
+    font-family: var(--font-medium);
+    color: var(--color-muted);
+    text-align: center;
+  }
+  .calendar__cell {
+    flex: 1;
+    margin: calc(var(--spacing) * 0.5);
+    aspect-ratio: 1;
+    align-items: center;
+    justify-content: center;
+  }
+  .calendar__cell-body {
+    position: relative;
+    width: calc(var(--spacing) * 10);
+    height: calc(var(--spacing) * 10);
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-4xl);
+  }
+  .calendar__cell-label {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-family: var(--font-medium);
+    text-align: center;
+    color: var(--color-foreground);
+  }
+  .calendar__cell-indicator {
+    position: absolute;
+    bottom: calc(var(--spacing) * 1.5);
+    width: calc(var(--spacing) * 1);
+    height: calc(var(--spacing) * 1);
+    border-radius: 9999px;
+    background-color: var(--color-muted);
+  }
+}

@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: cbf1488-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: cbf1488
+      POSTGRES_USER: cbf1488
+      POSTGRES_PASSWORD: cbf1488-local
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - cbf1488-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cbf1488 -d cbf1488"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  cbf1488-postgres:

@@ -1,0 +1,15 @@
+@layer components {
+  /** The `data-[size=...]` utilities stay in trend-chip.styles.ts: data
+     * selectors are Tailwind variants and cannot be applied to custom CSS
+     * classes.*/
+  .trend-chip__indicator {
+    align-items: center;
+    justify-content: center;
+  }
+  .trend-chip__value {
+    font-variant-numeric: tabular-nums;
+  }
+  .trend-chip__suffix {
+    color: var(--color-muted);
+  }
+}

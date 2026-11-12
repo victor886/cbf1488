@@ -1,0 +1,56 @@
+@layer components {
+  /** The `data-[...]:` utilities on the key stay in number-pad.styles.ts: data
+     * selectors are Tailwind variants and cannot be applied to custom CSS
+     * classes.*/
+  .number-pad__root {
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+    width: 100%;
+  }
+  .number-pad__root--is-disabled {
+    opacity: var(--opacity-disabled);
+  }
+  /** Digits read left-to-right in every locale, so the keypad rows are pinned to
+     * a physical LTR flow (matching the iOS/Android dialers in RTL languages)
+     * instead of mirroring with the app direction.*/
+  .number-pad__row {
+    flex-direction: row;
+    direction: ltr;
+    align-items: stretch;
+    gap: calc(var(--spacing) * 1.5);
+    width: 100%;
+    min-height: calc(var(--spacing) * 16);
+  }
+  .number-pad__key {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-3xl);
+    background-color: var(--color-default);
+  }
+  /* Key background — absolute-fill layer behind the key surface */
+  .number-pad__key-background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-3xl);
+    overflow: hidden;
+  }
+  .number-pad__key-label {
+    color: var(--color-foreground);
+    font-family: var(--font-semibold);
+    text-align: center;
+    font-size: var(--text-3xl);
+    line-height: var(--text-3xl--line-height);
+    font-variant-numeric: tabular-nums;
+  }
+  /* Declared after the key base so the transparent background wins the cascade. */
+  .number-pad__backspace {
+    background-color: transparent;
+  }
+  .number-pad__spacer-active {
+    background-color: transparent;
+  }
+  .number-pad__spacer-inactive {
+    flex: 1;
+  }
+}

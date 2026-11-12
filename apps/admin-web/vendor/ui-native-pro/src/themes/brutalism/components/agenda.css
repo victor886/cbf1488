@@ -1,0 +1,16 @@
+@layer components {
+  .agenda__heading, .agenda__week-header-day, .agenda__month-weekday-label {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  /* Surface shadows are disabled, so the inner cards get a hard border instead. */
+  .agenda__header-pane, .agenda__body {
+    border-width: 1px;
+    border-color: var(--color-border);
+  }
+  /* Hard-coded pill radii (9999px) don't derive from --radius, square them explicitly. */
+  .agenda__week-header-date, .agenda__month-cell-date, .agenda__current-time-badge, .agenda__current-time-dot, .agenda__event-resize-grabber {
+    border-radius: 0;
+  }
+}

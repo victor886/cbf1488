@@ -1,0 +1,123 @@
+@layer components {
+  /** The root does not clip: the whole content card travels past the row bounds
+     * while swiping, and the parent (usually a scroll view) clips it instead.*/
+  .swipeable-row__root {
+    position: relative;
+  }
+  .swipeable-row__root--variant-standalone {
+    border-radius: var(--radius-3xl);
+  }
+  /* Square so stacked rows butt together without gaps. */
+  .swipeable-row__root--variant-inline {
+    border-radius: 0;
+  }
+  .swipeable-row__root--is-disabled {
+    opacity: var(--opacity-disabled);
+    pointer-events: none;
+  }
+  /** Static rail container resting behind the card, which uncovers it as it
+     * moves. Rounded like the card so nothing shows around the card corners. The
+     * content-side padding keeps a gap between the settled card and the first
+     * action, and counts toward the measured travel distance.*/
+  .swipeable-row__actions-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: var(--radius-3xl);
+  }
+  .swipeable-row__actions-mask--side-start {
+    inset-inline-start: 0;
+    padding-inline-end: calc(var(--spacing) * 2);
+  }
+  .swipeable-row__actions-mask--side-end {
+    inset-inline-end: 0;
+    padding-inline-start: calc(var(--spacing) * 2);
+  }
+  /** Vertical inset keeps actions shorter than the row, so actions of stacked
+     * rows (e.g. the gapless inline variant) never touch each other.*/
+  .swipeable-row__actions {
+    flex: 1;
+    gap: calc(var(--spacing) * 2);
+    padding-top: calc(var(--spacing) * 1.5);
+    padding-bottom: calc(var(--spacing) * 1.5);
+  }
+  .swipeable-row__actions--side-start {
+    /* First declared action stays adjacent to the moving content edge. */
+    flex-direction: row-reverse;
+  }
+  .swipeable-row__actions--side-end {
+    /* First declared action stays adjacent to the moving content edge. */
+    flex-direction: row;
+  }
+  .swipeable-row__content {
+    position: relative;
+    z-index: 1;
+    background-color: var(--color-surface);
+  }
+  .swipeable-row__content--variant-standalone {
+    border-radius: var(--radius-3xl);
+    box-shadow: var(--shadow-surface);
+  }
+  /** Flat and square at rest; the radius is animated with the drag distance.
+     * Clipping keeps the background layer inside the animated corners.*/
+  .swipeable-row__content--variant-inline {
+    border-radius: 0;
+    overflow: hidden;
+  }
+  .swipeable-row__content-background {
+    position: absolute;
+    inset: 0;
+  }
+  .swipeable-row__content-background--variant-standalone {
+    border-radius: var(--radius-3xl);
+    overflow: hidden;
+  }
+  /* Clipped by the inline card's animated corners instead. */
+  .swipeable-row__content-background--variant-inline {
+    border-radius: 0;
+  }
+  .swipeable-row__action {
+    min-width: 72px;
+    min-height: 44px;
+    padding-inline: calc(var(--spacing) * 3);
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-3xl);
+  }
+  .swipeable-row__action-content {
+    gap: calc(var(--spacing) * 1);
+    align-items: center;
+    justify-content: center;
+  }
+  .swipeable-row__action--variant-default {
+    background-color: var(--color-default);
+  }
+  .swipeable-row__action--variant-accent {
+    background-color: var(--color-accent);
+  }
+  .swipeable-row__action--variant-success {
+    background-color: var(--color-success);
+  }
+  .swipeable-row__action--variant-danger {
+    background-color: var(--color-danger);
+  }
+  .swipeable-row__action-label {
+    text-align: center;
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
+    font-family: var(--font-medium);
+  }
+  .swipeable-row__action-label--variant-default {
+    color: var(--color-default-foreground);
+  }
+  .swipeable-row__action-label--variant-accent {
+    color: var(--color-accent-foreground);
+  }
+  .swipeable-row__action-label--variant-success {
+    color: var(--color-success-foreground);
+  }
+  .swipeable-row__action-label--variant-danger {
+    color: var(--color-danger-foreground);
+  }
+}

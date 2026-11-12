@@ -1,0 +1,10 @@
+@layer components {
+  .calendar__heading, .calendar__header-cell-label {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .calendar__cell-indicator {
+    border-radius: 0;
+  }
+}

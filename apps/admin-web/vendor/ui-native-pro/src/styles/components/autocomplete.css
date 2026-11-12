@@ -1,0 +1,54 @@
+@layer components {
+  .autocomplete__root {
+    gap: calc(var(--spacing) * 1.5);
+  }
+  /** Fixed 1.5px border width so layout does not shift between valid and
+     * invalid states.*/
+  .autocomplete__trigger {
+    border-width: 1.5px;
+    border-color: transparent;
+  }
+  .autocomplete__trigger--is-invalid {
+    border-color: var(--color-danger);
+  }
+  .autocomplete__overlay {
+    background-color: var(--color-backdrop);
+  }
+  /** Popovers keep the overlay only for tap-outside dismissal — no backdrop
+     * tint so the screen behind stays fully visible.*/
+  .autocomplete__overlay--presentation-popover {
+    background-color: transparent;
+  }
+  /** Compact override of the Button `sm` size (40px) so the clear button fits
+     * the trigger row; the touch target is preserved via `hitSlop`. The auto
+     * start margin pins it beside the indicator — the trigger's
+     * `justify-content: space-between` would otherwise center it.*/
+  .autocomplete__clear-button {
+    flex-shrink: 0;
+    margin-inline-start: auto;
+    height: calc(var(--spacing) * 6);
+    width: calc(var(--spacing) * 6);
+    padding-inline: 0;
+  }
+  .autocomplete__search-field {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  /** Cap the list height so the search field stays visible while long
+     * collections scroll.*/
+  .autocomplete__list {
+    max-height: 280px;
+    flex-grow: 0;
+  }
+  .autocomplete__empty {
+    align-items: center;
+    justify-content: center;
+    padding-block: calc(var(--spacing) * 6);
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .autocomplete__empty-text {
+    text-align: center;
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    color: var(--color-muted);
+  }
+}

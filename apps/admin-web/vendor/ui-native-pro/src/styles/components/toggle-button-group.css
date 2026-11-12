@@ -1,0 +1,23 @@
+@layer components {
+  /* Root - orientation */
+  .toggle-button-group__root--orientation-horizontal {
+    flex-direction: row;
+  }
+  .toggle-button-group__root--orientation-vertical {
+    flex-direction: column;
+  }
+  /* Root - booleans */
+  .toggle-button-group__root--is-detached {
+    gap: calc(var(--spacing) * 2);
+  }
+  .toggle-button-group__root--is-detached-false {
+    border-radius: var(--radius-3xl);
+    overflow: hidden;
+  }
+  .toggle-button-group__root--full-width {
+    width: 100%;
+  }
+  .toggle-button-group__root--is-disabled {
+    opacity: var(--opacity-disabled);
+  }
+}

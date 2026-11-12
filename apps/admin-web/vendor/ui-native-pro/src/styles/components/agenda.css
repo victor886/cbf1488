@@ -1,0 +1,385 @@
+@layer components {
+  /** All `data-[...]:` prefixed utilities stay in agenda.styles.ts: data
+     * selectors are Tailwind variants and cannot be applied to custom CSS
+     * classes. Only the plain base styles live here.*/
+  .agenda__absolute-fill {
+    position: absolute;
+    inset: 0;
+  }
+  .agenda__root {
+    flex: 1;
+    border-radius: var(--radius-4xl);
+    background-color: var(--color-surface-secondary);
+    padding: calc(var(--spacing) * 2);
+    overflow: hidden;
+  }
+  .agenda__background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-4xl);
+    overflow: hidden;
+  }
+  .agenda__header-pane {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-3xl);
+  }
+  .agenda__header {
+    width: 100%;
+    padding: calc(var(--spacing) * 3);
+  }
+  .agenda__calendar {
+    width: 100%;
+  }
+  .agenda__calendar-grid-clip {
+    overflow: hidden;
+  }
+  .agenda__heading {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-family: var(--font-medium);
+    color: var(--color-foreground);
+  }
+  .agenda__nav-button {
+    width: calc(var(--spacing) * 9);
+    height: calc(var(--spacing) * 9);
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-3xl);
+  }
+  .agenda__body {
+    flex: 1;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-3xl);
+    overflow: hidden;
+  }
+  .agenda__body-fade {
+    position: absolute;
+    bottom: 0;
+    inset-inline: 0;
+    height: 64px;
+  }
+  .agenda__page {
+    flex: 1;
+  }
+  .agenda__week-header {
+    flex-direction: row;
+    padding-top: calc(var(--spacing) * 2);
+    padding-bottom: calc(var(--spacing) * 1.5);
+  }
+  .agenda__week-header-cell {
+    flex: 1;
+    align-items: center;
+    gap: calc(var(--spacing) * 0.5);
+  }
+  .agenda__week-header-day {
+    font-size: 10px;
+    line-height: 12px;
+    font-family: var(--font-medium);
+    color: var(--color-muted);
+    text-transform: uppercase;
+  }
+  .agenda__week-header-date {
+    min-width: calc(var(--spacing) * 6);
+    height: calc(var(--spacing) * 6);
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    font-size: var(--text-xs);
+    line-height: calc(var(--spacing) * 6);
+    font-family: var(--font-medium);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-foreground);
+    text-align: center;
+    overflow: hidden;
+  }
+  .agenda__all-day-section {
+    z-index: 1;
+    padding-bottom: calc(var(--spacing) * 1);
+  }
+  .agenda__all-day-event {
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    border-radius: var(--radius-md);
+    background-color: var(--color-accent-soft);
+    padding-inline: calc(var(--spacing) * 1.5);
+    overflow: hidden;
+  }
+  /* RN Text resolves left/right against layout direction, so this means "start" */
+  .agenda__all-day-event-title {
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
+    font-family: var(--font-medium);
+    color: var(--color-accent-soft-foreground);
+    text-align: left;
+  }
+  .agenda__time-grid {
+    flex: 1;
+  }
+  .agenda__time-grid-scroll {
+    flex: 1;
+  }
+  .agenda__time-grid-fade {
+    position: absolute;
+    top: 0;
+    inset-inline: 0;
+    height: 36px;
+  }
+  /** The gutter label anchors to the leading edge and aligns its text toward the
+     * grid. RN Text resolves `text-align: right` against the layout direction, so
+     * it already means "trailing" and needs no rtl: override.*/
+  .agenda__time-gutter-label {
+    position: absolute;
+    inset-inline-start: 0;
+    font-size: 10px;
+    line-height: 12px;
+    font-family: var(--font-medium);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-muted);
+    text-align: right;
+  }
+  .agenda__hour-line {
+    position: absolute;
+    inset-inline: 0;
+    height: hairlineWidth();
+    background-color: var(--color-separator);
+  }
+  .agenda__day-columns {
+    flex: 1;
+    flex-direction: row;
+  }
+  /** Leading-edge separator: keeps a line between the time gutter and the first
+     * column (and between adjacent columns) in both layout directions.*/
+  .agenda__day-column {
+    flex: 1;
+    border-inline-start-width: hairlineWidth();
+    border-color: var(--color-separator);
+  }
+  .agenda__event {
+    position: relative;
+    border-radius: var(--radius-md);
+    border-width: 1px;
+    border-color: transparent;
+    background-color: var(--color-accent-soft);
+    padding-inline: calc(var(--spacing) * 2);
+    padding-block: calc(var(--spacing) * 1);
+    overflow: hidden;
+  }
+  .agenda__event-content {
+    flex: 1;
+  }
+  .agenda__event-tint {
+    position: absolute;
+    top: calc(var(--spacing) * -1);
+    bottom: calc(var(--spacing) * -1);
+    inset-inline: calc(var(--spacing) * -2);
+  }
+  .agenda__event-accent-bar {
+    position: absolute;
+    inset-inline-start: calc(var(--spacing) * -2);
+    top: 0;
+    bottom: 0;
+    width: 3px;
+  }
+  /* RN Text resolves left/right against layout direction, so this means "start" */
+  .agenda__event-title {
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
+    font-family: var(--font-medium);
+    color: var(--color-foreground);
+    text-align: left;
+  }
+  /* RN Text resolves left/right against layout direction, so this means "start" */
+  .agenda__event-time {
+    font-size: 10px;
+    line-height: 12px;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-muted);
+    text-align: left;
+  }
+  .agenda__event-resize-handle {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: calc(var(--spacing) * 1);
+  }
+  .agenda__event-resize-grabber {
+    width: calc(var(--spacing) * 7);
+    height: calc(var(--spacing) * 0.75);
+    border-radius: 9999px;
+    background-color: var(--color-muted);
+    opacity: 0.4;
+  }
+  .agenda__drag-guide {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+  }
+  /** iOS renders dashed borders only when all four sides are set, which paints two
+     * parallel dashed edges on a thin box. The outer element clips to 1px so a single
+     * dashed edge remains visible.*/
+  .agenda__drag-guide-line {
+    height: 1px;
+    overflow: hidden;
+  }
+  .agenda__drag-guide-line-dash {
+    height: 2px;
+    border-width: 1px;
+    border-style: dashed;
+    border-color: var(--color-accent);
+  }
+  /** Anchored to the leading edge like the gutter labels; `text-align: right`
+     * resolves logically on RN Text, so it means "trailing" in both directions.*/
+  .agenda__drag-guide-label {
+    position: absolute;
+    inset-inline-start: 0;
+    top: -5px;
+    font-size: 10px;
+    line-height: 12px;
+    font-family: var(--font-medium);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-accent);
+    text-align: right;
+    background-color: var(--color-surface);
+  }
+  .agenda__current-time {
+    position: absolute;
+    inset-inline: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+  .agenda__current-time-gutter {
+    align-items: flex-end;
+    justify-content: center;
+    padding-inline-end: calc(var(--spacing) * 1.5);
+  }
+  .agenda__current-time-badge {
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: var(--color-danger);
+    padding-inline: calc(var(--spacing) * 1.5);
+    padding-block: calc(var(--spacing) * 0.5);
+    overflow: hidden;
+  }
+  .agenda__current-time-label {
+    font-size: 10px;
+    line-height: 12px;
+    font-family: var(--font-medium);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-danger-foreground);
+    text-align: center;
+  }
+  .agenda__current-time-line {
+    flex: 1;
+    height: 1.5px;
+    background-color: var(--color-danger);
+  }
+  /** Rendered as a flow child between the gutter and the line; the negative
+     * horizontal margins center it on the junction without affecting layout.*/
+  .agenda__current-time-dot {
+    width: 3px;
+    margin-left: -1.5px;
+    margin-right: -1.5px;
+    height: calc(var(--spacing) * 2.5);
+    border-radius: 9999px;
+    background-color: var(--color-danger);
+    z-index: 1;
+  }
+  .agenda__month-grid {
+    flex: 1;
+    padding-bottom: calc(var(--spacing) * 14);
+  }
+  .agenda__month-weekday-row {
+    flex-direction: row;
+    padding-top: calc(var(--spacing) * 2);
+    padding-bottom: calc(var(--spacing) * 1);
+  }
+  .agenda__month-weekday-label {
+    flex: 1;
+    font-size: 10px;
+    line-height: 12px;
+    font-family: var(--font-medium);
+    color: var(--color-muted);
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .agenda__month-row {
+    flex: 1;
+    flex-direction: row;
+    border-top-width: hairlineWidth();
+    border-color: var(--color-separator);
+  }
+  .agenda__month-spanning-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  .agenda__month-spanning-event {
+    position: absolute;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-accent-soft);
+    padding-inline: calc(var(--spacing) * 1);
+    justify-content: center;
+    overflow: hidden;
+  }
+  /* RN Text resolves left/right against layout direction, so this means "start" */
+  .agenda__month-spanning-event-title {
+    font-size: 10px;
+    line-height: 12px;
+    font-family: var(--font-medium);
+    color: var(--color-accent-soft-foreground);
+    text-align: left;
+  }
+  .agenda__month-cell {
+    flex: 1;
+    align-items: stretch;
+    padding: calc(var(--spacing) * 0.5);
+    gap: 2px;
+  }
+  .agenda__month-cell-date {
+    align-self: center;
+    min-width: calc(var(--spacing) * 5.5);
+    height: calc(var(--spacing) * 5.5);
+    border-radius: 9999px;
+    font-size: var(--text-xs);
+    line-height: calc(var(--spacing) * 5.5);
+    font-family: var(--font-medium);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-foreground);
+    text-align: center;
+    overflow: hidden;
+  }
+  .agenda__month-cell-events {
+    gap: 2px;
+  }
+  .agenda__month-event {
+    border-radius: var(--radius-sm);
+    background-color: var(--color-accent-soft);
+    padding-inline: calc(var(--spacing) * 1);
+    justify-content: center;
+    overflow: hidden;
+  }
+  /* RN Text resolves left/right against layout direction, so this means "start" */
+  .agenda__month-event-title {
+    font-size: 10px;
+    line-height: 12px;
+    font-family: var(--font-medium);
+    color: var(--color-accent-soft-foreground);
+    text-align: left;
+  }
+  .agenda__month-cell-more {
+    font-size: 10px;
+    line-height: 12px;
+    font-family: var(--font-medium);
+    color: var(--color-muted);
+    text-align: center;
+  }
+  .agenda__view-selector {
+    position: absolute;
+    bottom: calc(var(--spacing) * 4);
+    align-self: center;
+  }
+}

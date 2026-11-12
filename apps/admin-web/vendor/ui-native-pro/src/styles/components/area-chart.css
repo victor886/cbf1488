@@ -1,0 +1,5 @@
+@layer components {
+  .area-chart__root {
+    width: 100%;
+  }
+}

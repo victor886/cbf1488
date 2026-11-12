@@ -1,0 +1,164 @@
+@layer components {
+  .badge__root {
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-2xl);
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: var(--color-background);
+  }
+  /* Root - size */
+  .badge__root--size-sm {
+    min-height: calc(var(--spacing) * 3.5);
+    min-width: calc(var(--spacing) * 3.5);
+    padding-inline: calc(var(--spacing) * 1);
+  }
+  .badge__root--size-md {
+    min-height: calc(var(--spacing) * 4.5);
+    min-width: calc(var(--spacing) * 4.5);
+    padding-inline: calc(var(--spacing) * 1);
+  }
+  .badge__root--size-lg {
+    min-height: calc(var(--spacing) * 5.5);
+    min-width: calc(var(--spacing) * 5.5);
+    padding-inline: calc(var(--spacing) * 1.5);
+  }
+  /* Root - variant */
+  .badge__root--variant-secondary {
+    background-color: var(--color-default);
+  }
+  /** Root - placement
+     * The `translate-x-*` / `translate-y-*` utilities stay in badge.styles.ts:
+     * Tailwind implements them through the composable `translate` mechanism,
+     * which has no reliable single-declaration equivalent in the uniwind CSS
+     * parser. Only the positioning moves here.
+     *
+     * These anchors stay physical (`left`/`right`) on purpose: the `placement`
+     * prop names physical corners (`top-right`), and the paired `translate-x`
+     * nudges are physical too (transforms never flip with direction), so
+     * converting only the anchors to logical properties would tear the two
+     * apart under RTL. Consumers who want a mirrored badge pass the opposite
+     * placement.*/
+  .badge__root--placement-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .badge__root--placement-top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .badge__root--placement-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .badge__root--placement-bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  /* Root - booleans (declared after size so the dot override wins the cascade) */
+  .badge__root--is-dot {
+    padding-inline: 0;
+  }
+  .badge__background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+  }
+  /* Root - variant x color compounds */
+  .badge__root--variant-primary--color-default {
+    background-color: var(--color-default);
+  }
+  .badge__root--variant-primary--color-accent {
+    background-color: var(--color-accent);
+  }
+  .badge__root--variant-primary--color-success {
+    background-color: var(--color-success);
+  }
+  .badge__root--variant-primary--color-warning {
+    background-color: var(--color-warning);
+  }
+  .badge__root--variant-primary--color-danger {
+    background-color: var(--color-danger);
+  }
+  .badge__root--variant-soft--color-default {
+    background-color: var(--color-default);
+  }
+  .badge__root--variant-soft--color-accent {
+    background-color: var(--color-accent-soft);
+  }
+  .badge__root--variant-soft--color-success {
+    background-color: var(--color-success-soft);
+  }
+  .badge__root--variant-soft--color-warning {
+    background-color: var(--color-warning-soft);
+  }
+  .badge__root--variant-soft--color-danger {
+    background-color: var(--color-danger-soft);
+  }
+  .badge__label {
+    font-family: var(--font-medium);
+  }
+  /* Label - size */
+  .badge__label--size-sm {
+    font-size: 10px;
+  }
+  .badge__label--size-md {
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
+  }
+  .badge__label--size-lg {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+  }
+  /* Label - variant x color compounds */
+  .badge__label--variant-primary--color-default {
+    color: var(--color-default-foreground);
+  }
+  .badge__label--variant-primary--color-accent {
+    color: var(--color-accent-foreground);
+  }
+  .badge__label--variant-primary--color-success {
+    color: var(--color-success-foreground);
+  }
+  .badge__label--variant-primary--color-warning {
+    color: var(--color-warning-foreground);
+  }
+  .badge__label--variant-primary--color-danger {
+    color: var(--color-danger-foreground);
+  }
+  .badge__label--variant-secondary--color-default {
+    color: var(--color-default-foreground);
+  }
+  .badge__label--variant-secondary--color-accent {
+    color: var(--color-accent-soft-foreground);
+  }
+  .badge__label--variant-secondary--color-success {
+    color: var(--color-success-soft-foreground);
+  }
+  .badge__label--variant-secondary--color-warning {
+    color: var(--color-warning-soft-foreground);
+  }
+  .badge__label--variant-secondary--color-danger {
+    color: var(--color-danger-soft-foreground);
+  }
+  .badge__label--variant-soft--color-default {
+    color: var(--color-default-foreground);
+  }
+  .badge__label--variant-soft--color-accent {
+    color: var(--color-accent-soft-foreground);
+  }
+  .badge__label--variant-soft--color-success {
+    color: var(--color-success-soft-foreground);
+  }
+  .badge__label--variant-soft--color-warning {
+    color: var(--color-warning-soft-foreground);
+  }
+  .badge__label--variant-soft--color-danger {
+    color: var(--color-danger-soft-foreground);
+  }
+}

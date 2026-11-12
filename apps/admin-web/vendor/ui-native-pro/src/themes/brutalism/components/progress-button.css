@@ -1,0 +1,10 @@
+@layer components {
+  .progress-button__root {
+    border-radius: 0;
+  }
+  .progress-button__label, .progress-button__mask-label {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}

@@ -1,0 +1,41 @@
+@layer components {
+  .combo-box__root {
+    gap: calc(var(--spacing) * 1.5);
+  }
+  /** Transparent so the input group stays visible (and readable) while the
+     * popover is open; the overlay still captures presses to dismiss.*/
+  .combo-box__overlay {
+    background-color: transparent;
+  }
+  /** Compact override of the Button `sm` size so the clear button matches the
+     * Autocomplete clear button and fits the input row; the touch target is
+     * preserved via `hitSlop`.*/
+  .combo-box__clear-button {
+    flex-shrink: 0;
+    height: calc(var(--spacing) * 6);
+    width: calc(var(--spacing) * 6);
+    padding-inline: 0;
+  }
+  .combo-box__value {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    color: var(--color-muted);
+  }
+  /* * Cap the list height so long collections scroll inside the popover. */
+  .combo-box__list {
+    max-height: 280px;
+    flex-grow: 0;
+  }
+  .combo-box__empty {
+    align-items: center;
+    justify-content: center;
+    padding-block: calc(var(--spacing) * 6);
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .combo-box__empty-text {
+    text-align: center;
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    color: var(--color-muted);
+  }
+}

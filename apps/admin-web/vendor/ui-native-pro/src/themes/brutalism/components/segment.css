@@ -1,0 +1,10 @@
+@layer components {
+  .segment__label--size-sm, .segment__label--size-md, .segment__label--size-lg {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .segment__item--size-lg {
+    border-radius: 0;
+  }
+}

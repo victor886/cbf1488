@@ -1,0 +1,12 @@
+@layer components {
+  /* Brutalism disables the surface shadow, so the floating card gets a hard edge. */
+  .swipeable-row__content--variant-standalone {
+    border-width: 1px;
+    border-color: var(--color-border);
+  }
+  .swipeable-row__action-label {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}

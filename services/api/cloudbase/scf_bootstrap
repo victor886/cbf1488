@@ -1,0 +1,12 @@
+#!/bin/bash
+set -eu
+
+export NODE_ENV="${NODE_ENV:-production}"
+export PORT=9000
+
+NODE_BIN=/var/lang/node20/bin/node
+if [ ! -x "$NODE_BIN" ]; then
+  NODE_BIN="$(command -v node)"
+fi
+
+exec "$NODE_BIN" src/index.js

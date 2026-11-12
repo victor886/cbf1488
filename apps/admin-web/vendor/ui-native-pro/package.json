@@ -1,0 +1,439 @@
+{
+  "name": "@agile-avocation/ui-native-pro",
+  "version": "1.0.0-beta.12",
+  "description": "AG UI Native Pro — Premium React Native components built with Uniwind / Tailwind CSS 4.",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "development": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./styles": {
+      "types": "./src/styles/index.css",
+      "development": "./src/styles/index.css",
+      "default": "./src/styles/index.css"
+    },
+    "./package.json": "./package.json",
+    "./themes/brutalism": {
+      "development": "./src/themes/brutalism/index.css",
+      "default": "./dist/themes/brutalism/index.css"
+    },
+    "./themes/glass": {
+      "development": "./src/themes/glass/index.css",
+      "default": "./dist/themes/glass/index.css"
+    },
+    "./hooks": {
+      "types": "./dist/helpers/external/hooks/index.d.ts",
+      "development": "./src/helpers/external/hooks/index.ts",
+      "default": "./dist/helpers/external/hooks/index.js"
+    },
+    "./utils": {
+      "types": "./dist/helpers/external/utils/index.d.ts",
+      "development": "./src/helpers/external/utils/index.ts",
+      "default": "./dist/helpers/external/utils/index.js"
+    },
+    "./agenda": {
+      "types": "./dist/components/agenda/index.d.ts",
+      "development": "./src/components/agenda/index.ts",
+      "default": "./dist/components/agenda/index.js"
+    },
+    "./area-chart": {
+      "types": "./dist/components/area-chart/index.d.ts",
+      "development": "./src/components/area-chart/index.ts",
+      "default": "./dist/components/area-chart/index.js"
+    },
+    "./autocomplete": {
+      "types": "./dist/components/autocomplete/index.d.ts",
+      "development": "./src/components/autocomplete/index.ts",
+      "default": "./dist/components/autocomplete/index.js"
+    },
+    "./badge": {
+      "types": "./dist/components/badge/index.d.ts",
+      "development": "./src/components/badge/index.ts",
+      "default": "./dist/components/badge/index.js"
+    },
+    "./bar-chart": {
+      "types": "./dist/components/bar-chart/index.d.ts",
+      "development": "./src/components/bar-chart/index.ts",
+      "default": "./dist/components/bar-chart/index.js"
+    },
+    "./calendar": {
+      "types": "./dist/components/calendar/index.d.ts",
+      "development": "./src/components/calendar/index.ts",
+      "default": "./dist/components/calendar/index.js"
+    },
+    "./calendar-year-picker": {
+      "types": "./dist/components/calendar-year-picker/index.d.ts",
+      "development": "./src/components/calendar-year-picker/index.ts",
+      "default": "./dist/components/calendar-year-picker/index.js"
+    },
+    "./carousel": {
+      "types": "./dist/components/carousel/index.d.ts",
+      "development": "./src/components/carousel/index.ts",
+      "default": "./dist/components/carousel/index.js"
+    },
+    "./chart-crosshair": {
+      "types": "./dist/components/chart-crosshair/index.d.ts",
+      "development": "./src/components/chart-crosshair/index.ts",
+      "default": "./dist/components/chart-crosshair/index.js"
+    },
+    "./chart-indicator": {
+      "types": "./dist/components/chart-indicator/index.d.ts",
+      "development": "./src/components/chart-indicator/index.ts",
+      "default": "./dist/components/chart-indicator/index.js"
+    },
+    "./chart-tooltip": {
+      "types": "./dist/components/chart-tooltip/index.d.ts",
+      "development": "./src/components/chart-tooltip/index.ts",
+      "default": "./dist/components/chart-tooltip/index.js"
+    },
+    "./combo-box": {
+      "types": "./dist/components/combo-box/index.d.ts",
+      "development": "./src/components/combo-box/index.ts",
+      "default": "./dist/components/combo-box/index.js"
+    },
+    "./composed-chart": {
+      "types": "./dist/components/composed-chart/index.d.ts",
+      "development": "./src/components/composed-chart/index.ts",
+      "default": "./dist/components/composed-chart/index.js"
+    },
+    "./date-field": {
+      "types": "./dist/components/date-field/index.d.ts",
+      "development": "./src/components/date-field/index.ts",
+      "default": "./dist/components/date-field/index.js"
+    },
+    "./date-picker": {
+      "types": "./dist/components/date-picker/index.d.ts",
+      "development": "./src/components/date-picker/index.ts",
+      "default": "./dist/components/date-picker/index.js"
+    },
+    "./date-range-picker": {
+      "types": "./dist/components/date-range-picker/index.d.ts",
+      "development": "./src/components/date-range-picker/index.ts",
+      "default": "./dist/components/date-range-picker/index.js"
+    },
+    "./date-time-picker": {
+      "types": "./src/components/date-time-picker/index.ts",
+      "development": "./src/components/date-time-picker/index.ts",
+      "default": "./src/components/date-time-picker/index.ts"
+    },
+    "./empty-state": {
+      "types": "./dist/components/empty-state/index.d.ts",
+      "development": "./src/components/empty-state/index.ts",
+      "default": "./dist/components/empty-state/index.js"
+    },
+    "./fab": {
+      "types": "./dist/components/fab/index.d.ts",
+      "development": "./src/components/fab/index.ts",
+      "default": "./dist/components/fab/index.js"
+    },
+    "./flip-card": {
+      "types": "./dist/components/flip-card/index.d.ts",
+      "development": "./src/components/flip-card/index.ts",
+      "default": "./dist/components/flip-card/index.js"
+    },
+    "./line-chart": {
+      "types": "./dist/components/line-chart/index.d.ts",
+      "development": "./src/components/line-chart/index.ts",
+      "default": "./dist/components/line-chart/index.js"
+    },
+    "./morph-button": {
+      "types": "./dist/components/morph-button/index.d.ts",
+      "development": "./src/components/morph-button/index.ts",
+      "default": "./dist/components/morph-button/index.js"
+    },
+    "./morph-tabs": {
+      "types": "./dist/components/morph-tabs/index.d.ts",
+      "development": "./src/components/morph-tabs/index.ts",
+      "default": "./dist/components/morph-tabs/index.js"
+    },
+    "./number-field": {
+      "types": "./dist/components/number-field/index.d.ts",
+      "development": "./src/components/number-field/index.ts",
+      "default": "./dist/components/number-field/index.js"
+    },
+    "./number-pad": {
+      "types": "./dist/components/number-pad/index.d.ts",
+      "development": "./src/components/number-pad/index.ts",
+      "default": "./dist/components/number-pad/index.js"
+    },
+    "./number-stepper": {
+      "types": "./src/components/number-stepper/index.ts",
+      "development": "./src/components/number-stepper/index.ts",
+      "default": "./src/components/number-stepper/index.ts"
+    },
+    "./number-value": {
+      "types": "./dist/components/number-value/index.d.ts",
+      "development": "./src/components/number-value/index.ts",
+      "default": "./dist/components/number-value/index.js"
+    },
+    "./phone-number-field": {
+      "types": "./dist/components/phone-number-field/index.d.ts",
+      "development": "./src/components/phone-number-field/index.ts",
+      "default": "./dist/components/phone-number-field/index.js"
+    },
+    "./pie-chart": {
+      "types": "./dist/components/pie-chart/index.d.ts",
+      "development": "./src/components/pie-chart/index.ts",
+      "default": "./dist/components/pie-chart/index.js"
+    },
+    "./progress-bar": {
+      "types": "./dist/components/progress-bar/index.d.ts",
+      "development": "./src/components/progress-bar/index.ts",
+      "default": "./dist/components/progress-bar/index.js"
+    },
+    "./progress-button": {
+      "types": "./dist/components/progress-button/index.d.ts",
+      "development": "./src/components/progress-button/index.ts",
+      "default": "./dist/components/progress-button/index.js"
+    },
+    "./progress-circle": {
+      "types": "./dist/components/progress-circle/index.d.ts",
+      "development": "./src/components/progress-circle/index.ts",
+      "default": "./dist/components/progress-circle/index.js"
+    },
+    "./radar-chart": {
+      "types": "./dist/components/radar-chart/index.d.ts",
+      "development": "./src/components/radar-chart/index.ts",
+      "default": "./dist/components/radar-chart/index.js"
+    },
+    "./radial-chart": {
+      "types": "./dist/components/radial-chart/index.d.ts",
+      "development": "./src/components/radial-chart/index.ts",
+      "default": "./dist/components/radial-chart/index.js"
+    },
+    "./radio-button-group": {
+      "types": "./dist/components/radio-button-group/index.d.ts",
+      "development": "./src/components/radio-button-group/index.ts",
+      "default": "./dist/components/radio-button-group/index.js"
+    },
+    "./range-calendar": {
+      "types": "./dist/components/range-calendar/index.d.ts",
+      "development": "./src/components/range-calendar/index.ts",
+      "default": "./dist/components/range-calendar/index.js"
+    },
+    "./rating": {
+      "types": "./dist/components/rating/index.d.ts",
+      "development": "./src/components/rating/index.ts",
+      "default": "./dist/components/rating/index.js"
+    },
+    "./segment": {
+      "types": "./dist/components/segment/index.d.ts",
+      "development": "./src/components/segment/index.ts",
+      "default": "./dist/components/segment/index.js"
+    },
+    "./slide-button": {
+      "types": "./dist/components/slide-button/index.d.ts",
+      "development": "./src/components/slide-button/index.ts",
+      "default": "./dist/components/slide-button/index.js"
+    },
+    "./social-auth-button": {
+      "types": "./dist/components/social-auth-button/index.d.ts",
+      "development": "./src/components/social-auth-button/index.ts",
+      "default": "./dist/components/social-auth-button/index.js"
+    },
+    "./split-view": {
+      "types": "./dist/components/split-view/index.d.ts",
+      "development": "./src/components/split-view/index.ts",
+      "default": "./dist/components/split-view/index.js"
+    },
+    "./stacked-meter": {
+      "types": "./dist/components/stacked-meter/index.d.ts",
+      "development": "./src/components/stacked-meter/index.ts",
+      "default": "./dist/components/stacked-meter/index.js"
+    },
+    "./stepper": {
+      "types": "./dist/components/stepper/index.d.ts",
+      "development": "./src/components/stepper/index.ts",
+      "default": "./dist/components/stepper/index.js"
+    },
+    "./swipeable-row": {
+      "types": "./dist/components/swipeable-row/index.d.ts",
+      "development": "./src/components/swipeable-row/index.ts",
+      "default": "./dist/components/swipeable-row/index.js"
+    },
+    "./swipeable-tabs": {
+      "types": "./dist/components/swipeable-tabs/index.d.ts",
+      "development": "./src/components/swipeable-tabs/index.ts",
+      "default": "./dist/components/swipeable-tabs/index.js"
+    },
+    "./table": {
+      "types": "./dist/components/table/index.d.ts",
+      "development": "./src/components/table/index.ts",
+      "default": "./dist/components/table/index.js"
+    },
+    "./time-picker": {
+      "types": "./dist/components/time-picker/index.d.ts",
+      "development": "./src/components/time-picker/index.ts",
+      "default": "./dist/components/time-picker/index.js"
+    },
+    "./timeline": {
+      "types": "./dist/components/timeline/index.d.ts",
+      "development": "./src/components/timeline/index.ts",
+      "default": "./dist/components/timeline/index.js"
+    },
+    "./toggle-button": {
+      "types": "./dist/components/toggle-button/index.d.ts",
+      "development": "./src/components/toggle-button/index.ts",
+      "default": "./dist/components/toggle-button/index.js"
+    },
+    "./toggle-button-group": {
+      "types": "./dist/components/toggle-button-group/index.d.ts",
+      "development": "./src/components/toggle-button-group/index.ts",
+      "default": "./dist/components/toggle-button-group/index.js"
+    },
+    "./trend-chip": {
+      "types": "./dist/components/trend-chip/index.d.ts",
+      "development": "./src/components/trend-chip/index.ts",
+      "default": "./dist/components/trend-chip/index.js"
+    },
+    "./wheel-date-time-picker": {
+      "types": "./dist/components/wheel-date-time-picker/index.d.ts",
+      "development": "./src/components/wheel-date-time-picker/index.ts",
+      "default": "./dist/components/wheel-date-time-picker/index.js"
+    },
+    "./wheel-picker": {
+      "types": "./dist/components/wheel-picker/index.d.ts",
+      "development": "./src/components/wheel-picker/index.ts",
+      "default": "./dist/components/wheel-picker/index.js"
+    },
+    "./wheel-picker-group": {
+      "types": "./dist/components/wheel-picker-group/index.d.ts",
+      "development": "./src/components/wheel-picker-group/index.ts",
+      "default": "./dist/components/wheel-picker-group/index.js"
+    },
+    "./wheel-time-picker": {
+      "types": "./dist/components/wheel-time-picker/index.d.ts",
+      "development": "./src/components/wheel-time-picker/index.ts",
+      "default": "./dist/components/wheel-time-picker/index.js"
+    },
+    "./widget": {
+      "types": "./dist/components/widget/index.d.ts",
+      "development": "./src/components/widget/index.ts",
+      "default": "./dist/components/widget/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted",
+    "directory": "_release/package"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:watch": "tsc -p tsconfig.build.json --watch",
+    "clean": "rm -rf dist",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "restore": "node scripts/restore-from-backup.mjs",
+    "prepack": "yarn build",
+    "publish:github": "yarn npm publish",
+    "build-release": "node scripts/build-release.mjs"
+  },
+  "dependencies": {
+    "d3-scale": "^4.0.2",
+    "d3-shape": "^3.2.0",
+    "d3-zoom": "^3.0.0",
+    "its-fine": "^1.2.5",
+    "react-fast-compare": "^3.2.2"
+  },
+  "peerDependencies": {
+    "@internationalized/date": "^3.12.0",
+    "@internationalized/number": "^3.6.6",
+    "expo-blur": "*",
+    "heroui-native": "^1.0.11",
+    "libphonenumber-js": "^1.12.10",
+    "react": ">=19.0.0",
+    "react-native": ">=0.76.0",
+    "react-native-gesture-handler": ">=2.0.0",
+    "react-native-pager-view": ">=6.0.0",
+    "react-native-reanimated": ">=3.0.0",
+    "react-native-reanimated-dnd": ">=2.0.0",
+    "react-native-safe-area-context": ">=5.0.0",
+    "react-native-screens": ">=4.0.0",
+    "react-native-skia": ">=3.0.0",
+    "react-native-svg": ">=15.0.0",
+    "react-native-worklets": "*",
+    "tailwind-merge": ">=3.0.0",
+    "tailwind-variants": ">=3.2.0",
+    "tailwindcss": ">=4.0.0",
+    "uniwind": ">=1.13.0"
+  },
+  "peerDependenciesMeta": {
+    "@internationalized/date": {
+      "optional": true
+    },
+    "@internationalized/number": {
+      "optional": true
+    },
+    "expo-blur": {
+      "optional": true
+    },
+    "libphonenumber-js": {
+      "optional": true
+    },
+    "react-native-pager-view": {
+      "optional": true
+    },
+    "react-native-reanimated-dnd": {
+      "optional": true
+    },
+    "react-native-screens": {
+      "optional": true
+    },
+    "react-native-skia": {
+      "optional": true
+    },
+    "react-native-worklets": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@hyperse/eslint-config-hyperse": "^1.7.3",
+    "@internationalized/date": "^3.12.0",
+    "@internationalized/number": "^3.6.6",
+    "@react-native/metro-config": "0.86.0",
+    "@types/d3-scale": "^4.0.9",
+    "@types/d3-shape": "^3.1.7",
+    "@types/d3-zoom": "^3.0.8",
+    "@types/node": "^26.1.2",
+    "@types/react": "19.2.18",
+    "eslint": "^10.8.0",
+    "heroui-native": "^1.0.11",
+    "libphonenumber-js": "^1.12.10",
+    "postcss": "^8.5.0",
+    "prettier": "^3.0.3",
+    "react": "19.2.3",
+    "react-native": "0.86.0",
+    "react-native-gesture-handler": "~2.32.0",
+    "react-native-pager-view": "^6.9.1",
+    "react-native-reanimated": "4.5.0",
+    "react-native-reanimated-dnd": "^2.0.0",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0",
+    "react-native-skia": "^3.8.1",
+    "react-native-svg": "15.15.4",
+    "react-native-worklets": "0.10.0",
+    "tailwind-merge": "^3.4.0",
+    "tailwind-variants": "^3.2.2",
+    "tailwindcss": "^4.3.2",
+    "typescript": "^6.0.3",
+    "uniwind": "^1.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agile-Avocation/herouipro-native-v3.git",
+    "directory": "packages/ui-native-pro"
+  }
+}

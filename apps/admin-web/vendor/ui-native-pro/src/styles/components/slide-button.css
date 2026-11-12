@@ -1,0 +1,109 @@
+@layer components {
+  .slide-button__container {
+    height: 56px;
+    padding: calc(var(--spacing) * 1.5);
+    border-radius: var(--radius-4xl);
+    background-color: var(--color-default);
+    overflow: hidden;
+  }
+  .slide-button__container--is-disabled {
+    opacity: var(--opacity-disabled);
+  }
+  /* Container background — absolute-fill layer behind the container surface (clipped by the container) */
+  .slide-button__container-background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-4xl);
+    overflow: hidden;
+  }
+  .slide-button__content-container {
+    flex: 1;
+  }
+  /** Underlay clip: anchored to the inline-end edge (the side the thumb slides
+     * toward — right in LTR, left in RTL) and shrinks as progress increases,
+     * revealing only the track portion ahead of the thumb.*/
+  .slide-button__underlay-content-container {
+    position: absolute;
+    inset-inline-end: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: var(--radius-4xl);
+  }
+  .slide-button__underlay-content-content-container {
+    position: absolute;
+    inset-inline-end: 0;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  /** Overlay clip: anchored to the inline-start edge (where the thumb rests)
+     * with an animated width, so the overlay is revealed behind the thumb as it
+     * slides toward the inline-end edge in both directions.*/
+  .slide-button__overlay-content-container {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: var(--radius-4xl);
+  }
+  .slide-button__overlay-content-content-container {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Overlay content container - variant */
+  .slide-button__overlay-content-content-container--variant-default {
+    background-color: color-mix(in oklab, var(--color-default-foreground) 5%, transparent);
+  }
+  .slide-button__overlay-content-content-container--variant-accent {
+    background-color: var(--color-accent-soft);
+  }
+  .slide-button__overlay-content-content-container--variant-success {
+    background-color: var(--color-success-soft);
+  }
+  .slide-button__overlay-content-content-container--variant-danger {
+    background-color: var(--color-danger-soft);
+  }
+  /** Rests on the inline-start edge of the track and slides toward the
+     * inline-end edge; the translateX gesture animation mirrors its sign in RTL
+     * (see `useSlideButtonThumbAnimation`).*/
+  .slide-button__thumb {
+    position: absolute;
+    inset-inline-start: 0;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-4xl);
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+  }
+  .slide-button__thumb-background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-4xl);
+    overflow: hidden;
+  }
+  .slide-button__label {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-family: var(--font-medium);
+  }
+  /* Label - variant */
+  .slide-button__label--variant-default {
+    color: var(--color-default-soft-foreground);
+  }
+  .slide-button__label--variant-accent {
+    color: var(--color-accent-soft-foreground);
+  }
+  .slide-button__label--variant-success {
+    color: var(--color-success-soft-foreground);
+  }
+  .slide-button__label--variant-danger {
+    color: var(--color-danger-soft-foreground);
+  }
+}

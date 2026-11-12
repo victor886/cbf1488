@@ -1,0 +1,30 @@
+{
+  "description": "CBF1488 WeChat WebView shell",
+  "projectname": "CBF1488",
+  "appid": "wxedf9f387225eb054",
+  "compileType": "miniprogram",
+  "miniprogramRoot": "./",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "packNpmManually": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "本地 H5 开发",
+          "pathName": "pages/webview/index",
+          "query": "dev=1",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "libVersion": "latest"
+}

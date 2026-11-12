@@ -1,0 +1,12 @@
+@layer components {
+  .select__trigger--variant-default {
+    border-width: 1px;
+    border-color: var(--color-border);
+  }
+  /* Trigger value stays on body font (same as inputs / date-time pickers). */
+  .select__item-label {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}

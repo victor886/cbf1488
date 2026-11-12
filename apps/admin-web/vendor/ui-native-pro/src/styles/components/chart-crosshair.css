@@ -1,0 +1,44 @@
+@layer components {
+  .chart-crosshair__label {
+    color: var(--color-foreground);
+    font-size: 10px;
+    font-family: var(--font-normal);
+    min-width: calc(var(--spacing) * 10);
+    text-align: center;
+  }
+  /** `left` stays physical on purpose: the overlay is positioned by an animated
+     * `translateX` carrying physical chart-canvas coordinates (chart
+     * press state), and the canvas itself deliberately stays left-to-right.
+     * A logical anchor would tear the two apart under RTL.*/
+  .chart-crosshair__value-container {
+    position: absolute;
+    left: 0;
+    min-width: calc(var(--spacing) * 14);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .chart-crosshair__value-container--variant-default {
+    background-color: var(--color-default);
+    border-radius: var(--radius-2xl);
+    padding-inline: calc(var(--spacing) * 2);
+    padding-block: calc(var(--spacing) * 1);
+  }
+  .chart-crosshair__value-background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+  }
+  .chart-crosshair__value-container--variant-ghost {
+    background-color: transparent;
+    padding: calc(var(--spacing) * 1);
+  }
+  .chart-crosshair__value-label {
+    color: var(--color-foreground);
+    font-size: 10px;
+    font-family: var(--font-normal);
+    min-width: calc(var(--spacing) * 10);
+    text-align: center;
+  }
+}

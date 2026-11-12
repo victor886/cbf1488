@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import "uniwind";
+@import "heroui-native/styles";
+@import "@agile-avocation/ui-native-pro/styles";
+
+@source "./node_modules/heroui-native/lib";
+@source "./vendor/ui-native-pro/src";
+
+@theme {
+  --font-normal: "Noto Sans SC";
+  --font-medium: "Noto Sans SC";
+  --font-semibold: "Noto Sans SC";
+  --font-bold: "Noto Sans SC";
+  --color-cbf-navy: #0b1531;
+  --color-cbf-blue: #1d4ed8;
+  --color-cbf-cyan: #73e5f7;
+}
+
+@layer theme {
+  :root,
+  :root.dark {
+    --accent: #1d4ed8;
+    --accent-foreground: #f5fcff;
+    --background: #0b1531;
+    --foreground: #f5fcff;
+    --surface: #22395d;
+    --surface-foreground: #f5fcff;
+    --field: rgba(255, 255, 255, 0.11);
+    --field-placeholder: #99b0cc;
+    --default: rgba(255, 255, 255, 0.11);
+    --default-foreground: #b0c9e3;
+    --border: rgba(125, 156, 194, 0.45);
+  }
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+  background: #0b1531;
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+body {
+  min-width: 320px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}

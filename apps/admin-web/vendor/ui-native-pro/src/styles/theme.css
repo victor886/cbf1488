@@ -1,0 +1,49 @@
+/** Chart ramp. Prefer concrete hex over `color-mix()` so Uniwind → colorKit on web
+ * can parse tokens (HeroUI Native #390 / #402). Themes may still override these.
+ * `--chart-3` tracks the active accent when possible via a resolved blue default;
+ * apps that recolor `--accent` should also override `--chart-*` if they need a
+ * matching ramp.
+ */
+@theme static {
+  --chart-1: #01407c;
+  --chart-2: #0261b7;
+  --chart-3: #0485f7;
+  --chart-4: #51a0fb;
+  --chart-5: #7fb9fe;
+}
+
+@theme inline static {
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+/**
+ * Web-safe hover / soft tokens for HeroUI Button (ghost/outline/etc.).
+ * HeroUI defines these as `color-mix(in oklab, …)` which Uniwind leaves unresolved
+ * on web; colorKit then fails with `[colorKit.RGB]` and falls back to black.
+ * Hex approximations match the default light/dark primitives.
+ */
+@layer theme {
+  :root {
+    @variant light {
+      --color-default-hover: #e1e1e2;
+      --color-accent-hover: #3592f9;
+      --color-danger-hover: #ff5551;
+      --color-danger-soft-hover: rgba(255, 85, 81, 0.2);
+      --color-success-hover: #22c55e;
+      --color-warning-hover: #eab308;
+    }
+
+    @variant dark {
+      --color-default-hover: #2e2e31;
+      --color-accent-hover: #3592f9;
+      --color-danger-hover: #ff5551;
+      --color-danger-soft-hover: rgba(255, 85, 81, 0.2);
+      --color-success-hover: #22c55e;
+      --color-warning-hover: #fbbf24;
+    }
+  }
+}

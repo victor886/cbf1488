@@ -1,0 +1,22 @@
+@layer components {
+  /** The `data-[...]:` prefixed utilities (variant/selected states, including
+     * their nested `ios:`/`android:` platform shadows) stay in
+     * radio-button-group.styles.ts: data selectors are Tailwind variants and
+     * cannot be applied to custom CSS classes.*/
+  .radio-button-group__item {
+    padding: calc(var(--spacing) * 4);
+    border-radius: var(--radius-3xl);
+    outline-style: solid;
+    outline-width: 1.5px;
+    outline-color: transparent;
+  }
+  .radio-button-group__item-background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-3xl);
+    overflow: hidden;
+  }
+  .radio-button-group__item-content {
+    flex: 1;
+  }
+}

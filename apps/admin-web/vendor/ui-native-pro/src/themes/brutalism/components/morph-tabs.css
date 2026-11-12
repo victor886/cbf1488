@@ -1,0 +1,17 @@
+@layer components {
+  /* Hard-coded pill radii (9999px) don't derive from --radius, square them explicitly. */
+  .morph-tabs__trigger, .morph-tabs__trigger-background {
+    border-radius: 0;
+  }
+  /* Hard borders replace the flat default-token pills for brutalist definition. */
+  .morph-tabs__trigger {
+    border-width: 1px;
+    border-color: var(--color-border);
+  }
+  /* Tab labels are short structural labels, so they take the display type. */
+  .morph-tabs__label {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}

@@ -1,0 +1,8 @@
+/* HeroUI Native Pro - Brutalism Theme */
+/* Theme variables (colors, radii, shadows, etc.) */
+@import "./brutalism.css";
+
+/*Component overrides. Same `@layer components` as the base styles; this file is
+   imported after them, so an equal-specificity rule here wins, and utilities
+   still override both.*/
+@import "./components/index.css";

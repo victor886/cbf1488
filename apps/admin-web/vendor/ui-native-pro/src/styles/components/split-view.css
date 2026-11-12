@@ -1,0 +1,25 @@
+@layer components {
+  .split-view__root {
+    flex: 1;
+  }
+  .split-view__top-section {
+    overflow: hidden;
+  }
+  .split-view__bottom-section {
+    flex: 1;
+    overflow: hidden;
+  }
+  .split-view__drag-area {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .split-view__drag-handle {
+    height: calc(var(--spacing) * 1);
+    width: calc(var(--spacing) * 10);
+    border-radius: 9999px;
+    background-color: var(--color-separator);
+  }
+}

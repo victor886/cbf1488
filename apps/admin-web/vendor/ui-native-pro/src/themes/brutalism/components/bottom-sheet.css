@@ -1,0 +1,16 @@
+@layer components {
+  .bottom-sheet__content-background {
+    border-width: 1px;
+    border-color: var(--color-border);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .bottom-sheet__content-handle-indicator {
+    border-radius: 0;
+  }
+  .bottom-sheet__label {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}

@@ -1,0 +1,138 @@
+@layer components {
+  /** Carousel — horizontal snap pager with navigation buttons, dot indicators,
+     * and a thumbnail strip. Slide widths, gaps, and snap offsets are computed at
+     * runtime from the measured viewport; only static chrome lives here.*/
+  .carousel {
+    position: relative;
+    width: 100%;
+  }
+  /* Modal type: content centered in a column with room below for indicators. */
+  .carousel--type-modal {
+    align-items: center;
+    gap: calc(var(--spacing) * 4);
+  }
+  /* Miniatures type: content centered above the thumbnail row. */
+  .carousel--type-miniatures {
+    align-items: center;
+  }
+  /** Slide viewport — the measured content box. The snap engine measures this
+     * wrapper (not a themable container), so theme borders or consumer padding
+     * never desync the snap offsets from the computed slide width.*/
+  .carousel__viewport {
+    width: 100%;
+    overflow: hidden;
+  }
+  /* Slide row inside the horizontal ScrollView (gap is applied inline at runtime). */
+  .carousel__content {
+    flex-direction: row;
+  }
+  /* One slide. Width is owned by the engine and applied inline. */
+  .carousel__item {
+    position: relative;
+  }
+  /** Navigation button positioning shell. Vertical centering happens inside the
+     * shell (its height is set inline to the measured viewport height), so the
+     * button centers on the slides even when dots or thumbnails extend the root.*/
+  .carousel__nav {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    justify-content: center;
+  }
+  .carousel__nav--previous--type-in-place {
+    inset-inline-start: calc(var(--spacing) * 5);
+  }
+  .carousel__nav--next--type-in-place {
+    inset-inline-end: calc(var(--spacing) * 5);
+  }
+  .carousel__nav--previous--type-modal {
+    inset-inline-start: calc(var(--spacing) * -15);
+  }
+  .carousel__nav--next--type-modal {
+    inset-inline-end: calc(var(--spacing) * -15);
+  }
+  /* Miniatures: buttons render inline with the thumbnail row. */
+  .carousel__nav--type-miniatures {
+    position: relative;
+    top: auto;
+    inset-inline-start: auto;
+    inset-inline-end: auto;
+  }
+  .carousel__nav-button {
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    /** 3xl (24px at the default --radius) exceeds half the 40px button, so it
+         * clamps to fully round by default while still scaling with --radius.*/
+    border-radius: var(--radius-3xl);
+    background-color: var(--color-default);
+  }
+  /* Theme background layer behind the nav button, clipped to its radius. */
+  .carousel__nav-button-background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-3xl);
+    overflow: hidden;
+  }
+  .carousel__dots {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--spacing) * 2);
+    margin-top: calc(var(--spacing) * 4);
+  }
+  /** Default dot. `width` and `background-color` here are fallbacks — the
+     * animation hook owns both while animated styles are active, interpolating
+     * them from root `progress` (see carousel.styles.ts).*/
+  .carousel__dot {
+    width: 8px;
+    height: 8px;
+    /** lg (8px at the default --radius) exceeds half the 8px dot, so it clamps
+         * to fully round by default while still scaling with --radius.*/
+    border-radius: var(--radius-lg);
+    background-color: var(--color-default);
+  }
+  .carousel__dot--is-selected {
+    background-color: var(--color-accent);
+  }
+  .carousel__thumbnails {
+    flex-grow: 0;
+    margin-top: calc(var(--spacing) * 4);
+  }
+  /* Miniatures: the strip sits inline between the nav buttons. */
+  .carousel__thumbnails--type-miniatures {
+    margin-top: 0;
+    flex-shrink: 1;
+  }
+  .carousel__thumbnails-content {
+    align-items: center;
+    gap: calc(var(--spacing) * 3);
+    padding: calc(var(--spacing) * 1);
+  }
+  .carousel__thumbnail {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+  }
+  .carousel__thumbnail-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /** Selection ring. `opacity` is a fallback — the animation hook owns it while
+     * animated styles are active (see carousel.styles.ts).*/
+  .carousel__thumbnail-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-2xl);
+    border-width: 2px;
+    border-color: var(--color-accent);
+    opacity: 0;
+  }
+  .carousel__thumbnail-ring--is-selected {
+    opacity: 1;
+  }
+}

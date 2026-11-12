@@ -1,0 +1,9 @@
+@layer components {
+  .date-picker__trigger {
+    border-width: 1.5px;
+    border-color: var(--color-border);
+  }
+  .date-picker__trigger--is-invalid {
+    border-color: var(--color-danger);
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "cbf1488",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CBF1488 WeChat Mini Program, admin web app, and shared API",
+  "workspaces": [
+    "apps/mini-program",
+    "apps/admin-web",
+    "services/api"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev --workspace @cbf1488/api",
+    "start:api": "npm run start --workspace @cbf1488/api",
+    "seed": "npm run seed --workspace @cbf1488/api",
+    "package:cloudbase": "npm run package:cloudbase --workspace @cbf1488/api",
+    "dev:admin": "npm run dev --workspace @cbf1488/admin-web",
+    "build:admin": "npm run build --workspace @cbf1488/admin-web"
+  }
+}

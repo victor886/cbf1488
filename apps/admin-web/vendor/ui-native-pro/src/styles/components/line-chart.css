@@ -1,0 +1,5 @@
+@layer components {
+  .line-chart__root {
+    width: 100%;
+  }
+}

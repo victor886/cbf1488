@@ -1,0 +1,8 @@
+@layer components {
+  .switch__root {
+    border-radius: 0;
+  }
+  .switch__thumb {
+    border-radius: 0;
+  }
+}

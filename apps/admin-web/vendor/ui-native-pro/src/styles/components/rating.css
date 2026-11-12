@@ -1,0 +1,30 @@
+@layer components {
+  /** The `data-[size=...]` gap and `data-[disabled=true]` utilities stay in
+     * rating.styles.ts: data selectors are Tailwind variants and cannot be
+     * applied to custom CSS classes.*/
+  .rating__root {
+    flex-direction: row;
+    align-items: center;
+  }
+  .rating__item {
+    align-items: center;
+    justify-content: center;
+  }
+  .rating__icon-wrapper {
+    align-items: center;
+    justify-content: center;
+  }
+  /** Partial-fill clip: anchored to the inline-start edge so the active icon is
+     * revealed from the reading side — left in LTR, right in RTL (items flow
+     * right-to-left there). `align-items: flex-start` resolves logically too, so
+     * the clipped icon hugs the same edge in both directions.*/
+  .rating__icon-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    inset-inline-start: 0;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+  }
+}

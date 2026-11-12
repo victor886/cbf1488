@@ -1,0 +1,30 @@
+@layer components {
+  /* Root - booleans */
+  .toggle-button__root--is-selected {
+    background-color: var(--color-accent-soft);
+  }
+  .toggle-button__root--in-attached-group {
+    border-radius: 0;
+  }
+  /* Root - compounds */
+  .toggle-button__root--variant-default--is-selected-false {
+    background-color: var(--color-default);
+  }
+  .toggle-button__root--variant-ghost--is-selected-false {
+    background-color: transparent;
+  }
+  .toggle-button__root--in-group--group-full-width {
+    flex: 1;
+  }
+  .toggle-button__label {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-family: var(--font-medium);
+  }
+  .toggle-button__label--is-selected {
+    color: var(--color-accent-soft-foreground);
+  }
+  .toggle-button__label--is-selected-false {
+    color: var(--color-foreground);
+  }
+}

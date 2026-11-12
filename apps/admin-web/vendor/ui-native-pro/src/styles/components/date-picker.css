@@ -1,0 +1,17 @@
+@layer components {
+  .date-picker__root {
+    gap: calc(var(--spacing) * 1.5);
+  }
+  /** Fixed 1.5px border width so layout does not shift between valid and
+     * invalid states.*/
+  .date-picker__trigger {
+    border-width: 1.5px;
+    border-color: transparent;
+  }
+  .date-picker__trigger--is-invalid {
+    border-color: var(--color-danger);
+  }
+  .date-picker__overlay {
+    background-color: var(--color-backdrop);
+  }
+}

@@ -1,0 +1,5 @@
+@layer components {
+  .bar-chart__root {
+    width: 100%;
+  }
+}

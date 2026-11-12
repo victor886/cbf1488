@@ -1,0 +1,13 @@
+@layer components {
+  .date-field__root {
+    gap: calc(var(--spacing) * 1.5);
+  }
+  .date-field__trigger-indicator {
+    padding: calc(var(--spacing) * 2);
+    border-radius: var(--radius-2xl);
+    background-color: color-mix(in oklab, var(--color-muted) 10%, transparent);
+  }
+  .date-field__overlay {
+    background-color: var(--color-backdrop);
+  }
+}

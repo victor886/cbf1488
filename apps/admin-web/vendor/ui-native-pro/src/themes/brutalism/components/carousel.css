@@ -1,0 +1,9 @@
+@layer components {
+  /** Nav-button and dot radii derive from the --radius scale, so brutalism's
+     * --radius: 0 squares them for free — only the borders need overriding.*/
+  /* Hard borders replace the flat default-token buttons for brutalist definition. */
+  .carousel__nav-button {
+    border-width: 1px;
+    border-color: var(--color-border);
+  }
+}

@@ -1,0 +1,80 @@
+@layer components {
+  .morph-tabs__root {
+    flex: 1;
+  }
+  /** Header row. `flex-direction: row` mirrors in RTL on its own; non-trigger
+     * children (avatars, buttons) keep their natural size while the triggers
+     * share the leftover space through their animated `flex-grow`.*/
+  .morph-tabs__list {
+    flex-direction: row;
+    align-items: center;
+    gap: calc(var(--spacing) * 2);
+    padding-inline: calc(var(--spacing) * 4);
+    padding-block: calc(var(--spacing) * 2);
+  }
+  /** Collapsed pill. `width` is the flex basis the animated `flex-grow` adds
+     * onto, so a collapsed pill is exactly this wide and the active pill fills
+     * the rest of the row. `overflow: hidden` clips the label while it shrinks.*/
+  .morph-tabs__trigger {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 52px;
+    height: 44px;
+    padding-inline: calc(var(--spacing) * 3);
+    border-radius: 9999px;
+    background-color: var(--color-default);
+    overflow: hidden;
+  }
+  .morph-tabs__trigger--is-disabled {
+    opacity: var(--opacity-disabled);
+    pointer-events: none;
+  }
+  .morph-tabs__trigger-background {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  .morph-tabs__icon {
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  /** Clipping box for the label. Its animated `max-width` is 0 in a collapsed
+     * pill, so the icon stays centered, and grows to the measured text width as
+     * the pill expands; `flex-shrink` clips it further when the pill is narrower.*/
+  .morph-tabs__label-container {
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+  /** Off-flow measuring host for the label's natural width. Absolute, so it
+     * never affects the pill layout; `align-items: flex-start` lets the text take
+     * its natural width inside the window-wide box.*/
+  .morph-tabs__label-measure {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    align-items: flex-start;
+    opacity: 0;
+  }
+  /** The icon/label gap lives on the text (not as a row `gap`) so it collapses
+     * with the clipping container instead of offsetting a collapsed icon.
+     * RN Text resolves left/right against layout direction, so this means "start".*/
+  .morph-tabs__label {
+    padding-inline-start: calc(var(--spacing) * 1.5);
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+    font-family: var(--font-medium);
+    color: var(--color-default-foreground);
+    text-align: left;
+  }
+  .morph-tabs__pager {
+    flex: 1;
+  }
+  .morph-tabs__content {
+    flex: 1;
+  }
+}

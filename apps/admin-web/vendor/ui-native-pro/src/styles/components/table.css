@@ -1,0 +1,165 @@
+@layer components {
+  /** Table — structured data display ported from the HeroUI web Table.
+     * Primary variant: gray shell (surface-secondary) with the body as an
+     * elevated white card inside. Secondary variant: flat root with a rounded
+     * header band and transparent, border-separated body rows.*/
+  .table__root {
+    width: 100%;
+  }
+  .table__root--variant-primary {
+    background-color: var(--color-surface-secondary);
+    border-radius: var(--radius-2xl);
+    padding-inline: calc(var(--spacing) * 1);
+    padding-bottom: calc(var(--spacing) * 1);
+  }
+  .table__background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+  }
+  .table__scroll-container {
+    flex-grow: 0;
+  }
+  /** The horizontal scroll content must stretch to at least the viewport width
+     * so flexible columns can share the remaining space; fixed-width overflow
+     * pushes past it and scrolls. The bottom padding reserves room for the body
+     * card's surface shadow, which the scroll view would otherwise clip.*/
+  .table__scroll-content {
+    flex-direction: row;
+    flex-grow: 1;
+  }
+  .table__content {
+    flex-grow: 1;
+    flex-direction: column;
+  }
+  .table__header {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .table__column {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(var(--spacing) * 1);
+    padding-inline: calc(var(--spacing) * 4);
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+  /* Secondary: the header band lives on the columns (rounded at the edges). */
+  .table__column--variant-secondary {
+    background-color: var(--color-surface-secondary);
+  }
+  .table__column-label {
+    flex-shrink: 1;
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
+    font-family: var(--font-medium);
+    color: var(--color-muted);
+    /* RN Text resolves left/right against layout direction, so this means "start" */
+    text-align: left;
+  }
+  .table__column-label--is-sorted {
+    color: var(--color-foreground);
+  }
+  /** Short vertical separator on the trailing edge between header columns.
+     * No block offsets on purpose: an absolutely positioned child with only an
+     * inline offset is cross-axis aligned by the row's `align-items: center`,
+     * which vertically centers the line without percentage math.*/
+  .table__column-separator {
+    position: absolute;
+    inset-inline-end: 0;
+    height: calc(var(--spacing) * 4);
+    width: hairlineWidth();
+    border-radius: var(--radius-sm);
+    background-color: var(--color-separator);
+  }
+  .table__sort-indicator {
+    align-items: center;
+    justify-content: center;
+  }
+  .table__body {
+    flex-direction: column;
+  }
+  /* Primary: the body is the elevated card; row backgrounds clip to it. */
+  .table__body--variant-primary {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+  .table__empty {
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--spacing) * 6);
+  }
+  .table__row {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .table__row--variant-primary {
+    border-bottom-width: hairlineWidth();
+    border-bottom-color: color-mix(in oklab, var(--color-separator) 50%, transparent);
+  }
+  /* The card's own edge closes the last primary row — no trailing border. */
+  .table__row--variant-primary--is-last {
+    border-bottom-width: 0;
+  }
+  /* Secondary keeps the bottom border on every row, including the last. */
+  .table__row--variant-secondary {
+    border-bottom-width: hairlineWidth();
+    border-bottom-color: color-mix(in oklab, var(--color-separator) 50%, transparent);
+  }
+  /** Press/selection tints composite over the body card (primary) or the page
+     * background (secondary), mirroring the web hover/selected treatments.*/
+  .table__row--variant-primary--is-pressed {
+    background-color: color-mix(in oklab, var(--color-surface-secondary) 60%, transparent);
+  }
+  .table__row--variant-primary--is-selected {
+    background-color: var(--color-surface-secondary);
+  }
+  .table__row--variant-secondary--is-pressed {
+    background-color: color-mix(in oklab, var(--color-default) 40%, transparent);
+  }
+  .table__row--variant-secondary--is-selected {
+    background-color: color-mix(in oklab, var(--color-default) 60%, transparent);
+  }
+  .table__row--is-disabled {
+    opacity: var(--opacity-disabled);
+    pointer-events: none;
+  }
+  .table__cell {
+    flex-direction: row;
+    align-items: center;
+    padding-inline: calc(var(--spacing) * 4);
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .table__cell-text {
+    flex-shrink: 1;
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    color: var(--color-foreground);
+    /* RN Text resolves left/right against layout direction, so this means "start" */
+    text-align: left;
+  }
+  /* Fixed-width checkbox column (header select-all and row selection cells). */
+  .table__selection-cell {
+    justify-content: center;
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  /** Compact selection checkbox — slightly smaller and less rounded than the
+     * base 24pt / radius-lg checkbox so it sits lighter inside the dense table
+     * rows. Wins over the base `.checkbox__root` declarations because both rules
+     * share `@layer components` and this file is imported after heroui-native.*/
+  .table__selection-checkbox {
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+    border-radius: var(--radius-md);
+  }
+  .table__footer {
+    flex-direction: row;
+    align-items: center;
+    gap: calc(var(--spacing) * 3);
+    padding-inline: calc(var(--spacing) * 4);
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+}

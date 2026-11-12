@@ -1,0 +1,13 @@
+@layer components {
+  /** Composed after heroui-native's `tabs__root` (column, gap) on the same
+     * element, so the root also fills its parent and the pager can flex.*/
+  .swipeable-tabs__root {
+    flex: 1;
+  }
+  .swipeable-tabs__pager {
+    flex: 1;
+  }
+  .swipeable-tabs__content {
+    flex: 1;
+  }
+}

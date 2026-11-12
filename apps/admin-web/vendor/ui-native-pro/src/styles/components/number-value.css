@@ -1,0 +1,10 @@
+@layer components {
+  .number-value__container {
+    flex-direction: row;
+    align-items: baseline;
+  }
+  .number-value__value {
+    color: var(--color-foreground);
+    font-variant-numeric: tabular-nums;
+  }
+}

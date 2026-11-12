@@ -1,0 +1,15 @@
+@layer components {
+  .button__label {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .button__root--variant-secondary, .button__root--variant-tertiary, .button__root--variant-outline {
+    border-width: 1px;
+    border-color: var(--color-border);
+  }
+  .button__root--variant-danger-soft {
+    border-width: 1px;
+    border-color: var(--color-danger);
+  }
+}

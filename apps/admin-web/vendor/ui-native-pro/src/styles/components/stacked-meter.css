@@ -1,0 +1,149 @@
+@layer components {
+  .stacked-meter__root {
+    width: 100%;
+    gap: calc(var(--spacing) * 3);
+  }
+  .stacked-meter__root--is-disabled {
+    opacity: var(--opacity-disabled);
+  }
+  /* RN Text resolves left/right against layout direction, so this means "start" */
+  .stacked-meter__label {
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+    font-family: var(--font-semibold);
+    color: var(--color-foreground);
+    text-align: left;
+  }
+  /** The track itself stays transparent: the gaps between segments show the
+     * surface behind the meter, and only the empty remainder paints
+     * `--color-default`. `overflow: hidden` rounds the two outer ends, so the
+     * segments keep square inner edges without any direction-aware radii.*/
+  .stacked-meter__track {
+    width: 100%;
+    flex-direction: row;
+    gap: calc(var(--spacing) * 0.5);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  /* Track - size */
+  .stacked-meter__track--size-sm {
+    height: calc(var(--spacing) * 1);
+  }
+  .stacked-meter__track--size-md {
+    height: calc(var(--spacing) * 2);
+  }
+  .stacked-meter__track--size-lg {
+    height: calc(var(--spacing) * 3);
+  }
+  .stacked-meter__track-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  /** `flex-basis: 0` makes the animated `flex-grow` the segment's exact share of
+     * the width left after the gaps. `min-width` keeps tiny shares visible.*/
+  .stacked-meter__segment {
+    height: 100%;
+    flex-basis: 0;
+    min-width: calc(var(--spacing) * 0.5);
+  }
+  /* Segment - color */
+  .stacked-meter__segment--color-default {
+    background-color: var(--color-default-foreground);
+  }
+  .stacked-meter__segment--color-accent {
+    background-color: var(--color-accent);
+  }
+  .stacked-meter__segment--color-success {
+    background-color: var(--color-success);
+  }
+  .stacked-meter__segment--color-warning {
+    background-color: var(--color-warning);
+  }
+  .stacked-meter__segment--color-danger {
+    background-color: var(--color-danger);
+  }
+  .stacked-meter__segment--color-chart-1 {
+    background-color: var(--color-chart-1);
+  }
+  .stacked-meter__segment--color-chart-2 {
+    background-color: var(--color-chart-2);
+  }
+  .stacked-meter__segment--color-chart-3 {
+    background-color: var(--color-chart-3);
+  }
+  .stacked-meter__segment--color-chart-4 {
+    background-color: var(--color-chart-4);
+  }
+  .stacked-meter__segment--color-chart-5 {
+    background-color: var(--color-chart-5);
+  }
+  .stacked-meter__remainder {
+    height: 100%;
+    flex-basis: 0;
+    background-color: var(--color-default);
+  }
+  .stacked-meter__legend {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: calc(var(--spacing) * 4);
+    row-gap: calc(var(--spacing) * 1.5);
+  }
+  .stacked-meter__legend-item {
+    flex-direction: row;
+    align-items: center;
+    gap: calc(var(--spacing) * 1.5);
+  }
+  .stacked-meter__legend-indicator {
+    width: calc(var(--spacing) * 2);
+    height: calc(var(--spacing) * 2);
+    border-radius: 9999px;
+  }
+  /* Legend indicator - color */
+  .stacked-meter__legend-indicator--color-default {
+    background-color: var(--color-default-foreground);
+  }
+  .stacked-meter__legend-indicator--color-accent {
+    background-color: var(--color-accent);
+  }
+  .stacked-meter__legend-indicator--color-success {
+    background-color: var(--color-success);
+  }
+  .stacked-meter__legend-indicator--color-warning {
+    background-color: var(--color-warning);
+  }
+  .stacked-meter__legend-indicator--color-danger {
+    background-color: var(--color-danger);
+  }
+  .stacked-meter__legend-indicator--color-chart-1 {
+    background-color: var(--color-chart-1);
+  }
+  .stacked-meter__legend-indicator--color-chart-2 {
+    background-color: var(--color-chart-2);
+  }
+  .stacked-meter__legend-indicator--color-chart-3 {
+    background-color: var(--color-chart-3);
+  }
+  .stacked-meter__legend-indicator--color-chart-4 {
+    background-color: var(--color-chart-4);
+  }
+  .stacked-meter__legend-indicator--color-chart-5 {
+    background-color: var(--color-chart-5);
+  }
+  /* RN Text resolves left/right against layout direction, so this means "start" */
+  .stacked-meter__legend-label {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-family: var(--font-semibold);
+    color: var(--color-foreground);
+    text-align: left;
+  }
+  .stacked-meter__legend-value {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-family: var(--font-normal);
+    color: var(--color-muted);
+    font-variant-numeric: tabular-nums;
+  }
+}

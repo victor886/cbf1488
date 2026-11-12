@@ -1,0 +1,125 @@
+@layer components {
+  .timeline__root {
+    flex-direction: column;
+  }
+  .timeline__item {
+    flex-direction: row;
+    gap: calc(var(--spacing) * 3);
+  }
+  /* Item - align */
+  .timeline__item--align-start {
+    align-items: flex-start;
+  }
+  .timeline__item--align-center {
+    align-items: center;
+  }
+  /* Item - density x last compounds */
+  .timeline__item--density-comfortable--is-last-false {
+    padding-bottom: calc(var(--spacing) * 5);
+  }
+  .timeline__item--density-compact--is-last-false {
+    padding-bottom: calc(var(--spacing) * 3);
+  }
+  .timeline__leading {
+    width: calc(var(--spacing) * 10);
+  }
+  .timeline__rail {
+    align-items: center;
+  }
+  .timeline__marker {
+    align-items: center;
+    justify-content: center;
+    border-width: 1px;
+    background-color: transparent;
+  }
+  /* Marker - size */
+  .timeline__marker--size-sm {
+    width: calc(var(--spacing) * 5.5);
+    height: calc(var(--spacing) * 5.5);
+    border-radius: var(--radius-xl);
+  }
+  .timeline__marker--size-md {
+    width: calc(var(--spacing) * 7);
+    height: calc(var(--spacing) * 7);
+    border-radius: var(--radius-2xl);
+  }
+  .timeline__marker--size-lg {
+    width: calc(var(--spacing) * 9);
+    height: calc(var(--spacing) * 9);
+    border-width: 2px;
+    border-radius: var(--radius-3xl);
+  }
+  /* Marker - status */
+  .timeline__marker--status-default {
+    border-color: var(--color-border);
+  }
+  .timeline__marker--status-muted {
+    border-color: var(--color-border);
+  }
+  .timeline__marker--status-current {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-soft);
+  }
+  .timeline__marker--status-success {
+    border-color: var(--color-success);
+    background-color: var(--color-success-soft);
+  }
+  .timeline__marker--status-warning {
+    border-color: var(--color-warning);
+    background-color: var(--color-warning-soft);
+  }
+  .timeline__marker--status-danger {
+    border-color: var(--color-danger);
+    background-color: var(--color-danger-soft);
+  }
+  .timeline__connector {
+    width: 1px;
+    background-color: var(--color-border);
+  }
+  .timeline__content {
+    min-width: 0;
+    flex: 1;
+    flex-direction: column;
+  }
+  /** RN Text resolves `text-align: left` against layout direction, so this
+     * means "start" — copy stays left-aligned in LTR and right-aligned in RTL.
+     * Without it, full-width text defaults to the physical left in both
+     * directions. Explicit alignment passed via className still overrides.*/
+  .timeline__title {
+    font-family: var(--font-medium);
+    color: var(--color-foreground);
+    text-align: left;
+  }
+  /* Title - size */
+  .timeline__title--size-sm {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+  }
+  .timeline__title--size-md {
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+  }
+  .timeline__title--size-lg {
+    font-size: var(--text-lg);
+    line-height: var(--text-lg--line-height);
+  }
+  /* `text-align: left` resolves logically to the start edge (see title). */
+  .timeline__description {
+    color: var(--color-muted);
+    font-family: var(--font-normal);
+    text-align: left;
+  }
+  /* Description - size */
+  .timeline__description--size-sm {
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
+  }
+  .timeline__description--size-md {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+  }
+  .timeline__description--size-lg {
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+  }
+}

@@ -1,0 +1,11 @@
+@layer components {
+  .stacked-meter__label {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  /* Hard-coded pill radius (9999px) doesn't derive from --radius, square it explicitly. */
+  .stacked-meter__legend-indicator {
+    border-radius: 0;
+  }
+}

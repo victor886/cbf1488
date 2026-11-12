@@ -1,0 +1,94 @@
+@layer components {
+  .progress-button__root {
+    height: 56px;
+    padding-inline: calc(var(--spacing) * 12);
+    border-radius: 9999px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--color-default);
+  }
+  /* Root - variant (border color used by the sweep edge) */
+  .progress-button__root--variant-default {
+    border-color: var(--color-default-foreground);
+  }
+  .progress-button__root--variant-accent {
+    border-color: var(--color-accent);
+  }
+  .progress-button__root--variant-success {
+    border-color: var(--color-success);
+  }
+  .progress-button__root--variant-danger {
+    border-color: var(--color-danger);
+  }
+  .progress-button__root--is-disabled {
+    opacity: var(--opacity-disabled);
+  }
+  .progress-button__background {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  /** Physical `left` anchor: the overlay is kept at full track width, so left
+     * and right anchoring coincide at rest. The sweep entry side is decided by
+     * the translateX animation, which mirrors in RTL (see
+     * `useProgressButtonOverlayAnimation`).*/
+  .progress-button__overlay {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+  }
+  /* Overlay - variant */
+  .progress-button__overlay--variant-default {
+    background-color: color-mix(in oklab, var(--color-default-foreground) 5%, transparent);
+  }
+  .progress-button__overlay--variant-accent {
+    background-color: var(--color-accent);
+  }
+  .progress-button__overlay--variant-success {
+    background-color: var(--color-success);
+  }
+  .progress-button__overlay--variant-danger {
+    background-color: var(--color-danger);
+  }
+  .progress-button__label {
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+    font-family: var(--font-medium);
+  }
+  /* Label - variant */
+  .progress-button__label--variant-default {
+    color: var(--color-default-foreground);
+  }
+  .progress-button__label--variant-accent {
+    color: var(--color-accent-soft-foreground);
+  }
+  .progress-button__label--variant-success {
+    color: var(--color-success-soft-foreground);
+  }
+  .progress-button__label--variant-danger {
+    color: var(--color-danger-soft-foreground);
+  }
+  .progress-button__mask-label {
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+    font-family: var(--font-medium);
+  }
+  /* Mask label - variant */
+  .progress-button__mask-label--variant-default {
+    color: var(--color-default-foreground);
+  }
+  .progress-button__mask-label--variant-accent {
+    color: var(--color-accent-foreground);
+  }
+  .progress-button__mask-label--variant-success {
+    color: var(--color-success-foreground);
+  }
+  .progress-button__mask-label--variant-danger {
+    color: var(--color-danger-foreground);
+  }
+}

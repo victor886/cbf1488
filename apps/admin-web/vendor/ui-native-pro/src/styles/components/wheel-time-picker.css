@@ -1,0 +1,8 @@
+@layer components {
+  .wheel-time-picker__hour-item-label {
+    font-variant-numeric: tabular-nums;
+  }
+  .wheel-time-picker__minute-item-label {
+    font-variant-numeric: tabular-nums;
+  }
+}

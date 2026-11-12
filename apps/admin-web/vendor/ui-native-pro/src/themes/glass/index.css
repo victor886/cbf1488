@@ -1,0 +1,7 @@
+/* HeroUI Native Pro - Glass Theme */
+/** Theme variables only: the semi-transparent surface tokens make the blur
+ * layers (rendered by heroui-native when `--theme: glass`) frost through
+ * every component, so no per-component CSS overrides are needed. If a
+ * component ever needs a glass-specific override, add a `components/`
+ * folder with an index.css and import it here (see the brutalism theme).*/
+@import "./glass.css";

@@ -1,0 +1,42 @@
+@layer components {
+  /** Pinned to LTR: grouped wheel columns compose numeric sequences (hour :
+     * minute, day / month / year) that are read left-to-right in every locale —
+     * mirroring the columns would reverse the reading order of the value (same
+     * rationale as the number-pad digit rows).*/
+  .wheel-picker-group__root {
+    flex-direction: row;
+    overflow: hidden;
+    direction: ltr;
+  }
+  .wheel-picker-group__root--is-disabled {
+    opacity: var(--opacity-disabled);
+    pointer-events: none;
+  }
+  .wheel-picker-group__indicator-wrapper {
+    position: absolute;
+    inset-inline: 0;
+    justify-content: center;
+    z-index: -1;
+  }
+  .wheel-picker-group__indicator-highlight {
+    flex: 1;
+    border-radius: var(--radius-2xl);
+    background-color: var(--color-default);
+  }
+  .wheel-picker-group__indicator-background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+  }
+  .wheel-picker-group__mask-top {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+  }
+  .wheel-picker-group__mask-bottom {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+  }
+}

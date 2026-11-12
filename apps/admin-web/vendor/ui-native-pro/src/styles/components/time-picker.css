@@ -1,0 +1,22 @@
+@layer components {
+  .time-picker__root {
+    gap: calc(var(--spacing) * 1.5);
+  }
+  /** Fixed 1.5px border width so layout does not shift between valid and
+     * invalid states.*/
+  .time-picker__trigger {
+    border-width: 1.5px;
+    border-color: transparent;
+  }
+  .time-picker__trigger--is-invalid {
+    border-color: var(--color-danger);
+  }
+  .time-picker__overlay {
+    background-color: var(--color-backdrop);
+  }
+  .time-picker__wheel {
+    width: 100%;
+    max-width: 240px;
+    align-self: center;
+  }
+}

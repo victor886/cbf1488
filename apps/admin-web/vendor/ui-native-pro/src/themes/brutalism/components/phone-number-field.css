@@ -1,0 +1,6 @@
+@layer components {
+  /* Hard-coded pill radius (9999px) doesn't derive from --radius, square it explicitly. */
+  .phone-number-field__content-handle {
+    border-radius: 0;
+  }
+}

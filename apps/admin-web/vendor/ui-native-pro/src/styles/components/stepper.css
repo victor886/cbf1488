@@ -1,0 +1,53 @@
+@layer components {
+  /** All `data-[...]:` prefixed utilities (orientation and status states) stay
+     * in stepper.styles.ts: data selectors are Tailwind variants and cannot be
+     * applied to custom CSS classes. The root and content tv definitions only
+     * contain data utilities and therefore have no classes here.*/
+  .stepper__step {
+    gap: calc(var(--spacing) * 3);
+  }
+  .stepper__indicator {
+    width: calc(var(--spacing) * 7);
+    height: calc(var(--spacing) * 7);
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-3xl);
+    border-width: 2px;
+    border-color: var(--color-accent);
+  }
+  .stepper__indicator-check {
+    align-items: center;
+    justify-content: center;
+  }
+  .stepper__indicator-number {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-family: var(--font-semibold);
+    color: var(--color-accent);
+  }
+  .stepper__separator {
+    background-color: var(--color-accent);
+  }
+  .stepper__separator-track {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-border);
+  }
+  .stepper__separator-fill {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-accent);
+  }
+  .stepper__title {
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+    font-family: var(--font-medium);
+    color: var(--color-foreground);
+  }
+  .stepper__description {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    color: var(--color-muted);
+    font-family: var(--font-normal);
+  }
+}

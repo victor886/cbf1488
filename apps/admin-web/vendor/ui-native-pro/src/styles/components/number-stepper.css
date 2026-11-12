@@ -1,0 +1,43 @@
+@layer components {
+  .number-stepper__root {
+    flex-direction: row;
+    align-items: center;
+    gap: calc(var(--spacing) * 2);
+    background-color: var(--color-default);
+    border-radius: var(--radius-3xl);
+    padding: calc(var(--spacing) * 0.5);
+  }
+  .number-stepper__root--is-disabled {
+    opacity: var(--opacity-disabled);
+  }
+  /* Root background — absolute-fill layer behind the root surface */
+  .number-stepper__root-background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-3xl);
+    overflow: hidden;
+  }
+  .number-stepper__button {
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-3xl);
+    padding: calc(var(--spacing) * 2.5);
+    background-color: var(--color-field);
+    box-shadow: var(--shadow-field);
+  }
+  .number-stepper__button-background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-3xl);
+    overflow: hidden;
+  }
+  .number-stepper__value {
+    color: var(--color-foreground);
+    font-family: var(--font-medium);
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+    text-align: center;
+    min-width: 24px;
+    font-variant-numeric: tabular-nums;
+  }
+}

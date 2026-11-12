@@ -1,0 +1,11 @@
+@layer components {
+  /** The base trigger keeps a transparent border (fixed width against invalid-
+     * state layout shift); brutalism makes it visible like other field triggers.*/
+  .autocomplete__trigger {
+    border-width: 1.5px;
+    border-color: var(--color-border);
+  }
+  .autocomplete__trigger--is-invalid {
+    border-color: var(--color-danger);
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "pages": ["pages/webview/index"],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#0b1531",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

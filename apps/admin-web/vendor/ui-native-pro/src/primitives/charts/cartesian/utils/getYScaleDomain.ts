@@ -1,0 +1,16 @@
+// @ts-nocheck
+export const getYScaleDomain = ({ yMin, yMax, yAxisScale = 'linear' }) => {
+  const fallbackYScaleDomain = yAxisScale === 'log' ? [10, 1] : [1, -1];
+  const singleValueYScaleDomain =
+    yAxisScale === 'log' ? [yMax * 10, yMin / 10] : [yMax + 1, yMin - 1];
+  if (!Number.isFinite(yMin) || !Number.isFinite(yMax)) {
+    return fallbackYScaleDomain;
+  }
+  if (yAxisScale === 'log' && (yMin <= 0 || yMax <= 0)) {
+    return fallbackYScaleDomain;
+  }
+  if (yMax === yMin) {
+    return singleValueYScaleDomain;
+  }
+  return [yMax, yMin];
+};

@@ -1,0 +1,27 @@
+@layer components {
+  .wheel-date-time-picker__root {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .wheel-date-time-picker__date-container {
+    flex: 2;
+  }
+  .wheel-date-time-picker__date-item-label {
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+  }
+  .wheel-date-time-picker__hour-container {
+    flex: 1;
+  }
+  .wheel-date-time-picker__hour-item-label {
+    font-variant-numeric: tabular-nums;
+  }
+  .wheel-date-time-picker__minute-container {
+    flex: 1;
+  }
+  .wheel-date-time-picker__minute-item-label {
+    font-variant-numeric: tabular-nums;
+  }
+  .wheel-date-time-picker__period-container {
+    flex: 1;
+  }
+}

@@ -1,0 +1,69 @@
+@layer components {
+  .progress-bar__root {
+    width: 100%;
+    gap: calc(var(--spacing) * 2);
+  }
+  .progress-bar__root--is-disabled {
+    opacity: var(--opacity-disabled);
+  }
+  .progress-bar__label-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .progress-bar__track {
+    width: 100%;
+    border-radius: var(--radius-md);
+    background-color: var(--color-default);
+    overflow: hidden;
+  }
+  .progress-bar__track-background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  /* Track - size */
+  .progress-bar__track--size-sm {
+    height: calc(var(--spacing) * 1);
+  }
+  .progress-bar__track--size-md {
+    height: calc(var(--spacing) * 1.5);
+  }
+  .progress-bar__track--size-lg {
+    height: calc(var(--spacing) * 2.5);
+  }
+  .progress-bar__fill {
+    height: 100%;
+    border-radius: var(--radius-md);
+  }
+  /* Fill - color */
+  .progress-bar__fill--color-default {
+    background-color: var(--color-default-foreground);
+  }
+  .progress-bar__fill--color-accent {
+    background-color: var(--color-accent);
+  }
+  .progress-bar__fill--color-success {
+    background-color: var(--color-success);
+  }
+  .progress-bar__fill--color-warning {
+    background-color: var(--color-warning);
+  }
+  .progress-bar__fill--color-danger {
+    background-color: var(--color-danger);
+  }
+  .progress-bar__label {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-family: var(--font-medium);
+    color: var(--color-foreground);
+  }
+  .progress-bar__value-label {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-family: var(--font-medium);
+    color: var(--color-muted);
+    font-variant-numeric: tabular-nums;
+  }
+}

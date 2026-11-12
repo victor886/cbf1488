@@ -1,0 +1,11 @@
+@layer components {
+  .fab__item {
+    border-width: 1px;
+    border-color: var(--color-border);
+  }
+  .fab__item-label {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "CBF1488",
+    "slug": "cbf1488-web",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./public/brand/cbf1488-mascot.png"
+    },
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}

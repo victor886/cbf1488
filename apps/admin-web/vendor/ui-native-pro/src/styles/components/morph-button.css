@@ -1,0 +1,81 @@
+@layer components {
+  /** The root is a layout-transparent anchor: its footprint always equals the
+     * in-flow collapsed content, so the expanding surface (absolutely anchored)
+     * overflows without shifting surrounding layout.*/
+  .morph-button__root {
+    position: relative;
+  }
+  .morph-button__root--is-disabled {
+    opacity: var(--opacity-disabled);
+    pointer-events: none;
+  }
+  /** The morphing card. `width`/`height` and the `top`/`start` anchor offsets
+     * are animated (see `useMorphButtonRootAnimation`); everything visual flows
+     * through theme tokens so themes restyle it for free.*/
+  .morph-button__surface {
+    position: absolute;
+    overflow: hidden;
+    border-radius: var(--radius-3xl);
+  }
+  /* Surface - variant */
+  .morph-button__surface--variant-primary {
+    background-color: var(--color-default-foreground);
+    box-shadow: var(--shadow-overlay);
+  }
+  .morph-button__surface--variant-secondary {
+    background-color: var(--color-surface-secondary);
+    box-shadow: var(--shadow-surface);
+  }
+  /** Fixed window-sized measuring host for the expanded content. Its constant
+     * size keeps the content's wrapping constraint stable, so the content never
+     * reflows while the surface morphs. The direction modifiers align the
+     * content to the surface's pinned corner/edge; `align-items` resolves
+     * logically (cross-axis start = inline start), so RTL mirrors for free.*/
+  .morph-button__expanded-host {
+    position: absolute;
+    flex-direction: column;
+  }
+  .morph-button__expanded-host--direction-top {
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .morph-button__expanded-host--direction-top-end {
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .morph-button__expanded-host--direction-end {
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .morph-button__expanded-host--direction-bottom-end {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .morph-button__expanded-host--direction-bottom {
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .morph-button__expanded-host--direction-bottom-start {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  .morph-button__expanded-host--direction-start {
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .morph-button__expanded-host--direction-top-start {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .morph-button__collapsed-content {
+    flex-direction: row;
+    align-items: center;
+    gap: calc(var(--spacing) * 2);
+    padding-block: calc(var(--spacing) * 2.5);
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .morph-button__expanded-content {
+    gap: calc(var(--spacing) * 3);
+    padding: calc(var(--spacing) * 5);
+  }
+}

@@ -1,0 +1,50 @@
+@layer components {
+  /** The `data-[pressed=true]:` utilities stay in number-field.styles.ts: data
+     * selectors are Tailwind variants and cannot be applied to custom CSS
+     * classes.*/
+  .number-field__root {
+    gap: calc(var(--spacing) * 1.5);
+  }
+  /** Logical anchors and corners: the decrement button sits at the leading edge
+     * (right in RTL) with its separator on the trailing side, mirroring the field.*/
+  .number-field__decrement-button-container {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    border-inline-end-width: 1px;
+    border-color: color-mix(in oklab, var(--color-field-placeholder) 15%, transparent);
+    border-top-start-radius: var(--radius-2xl);
+    border-bottom-start-radius: var(--radius-2xl);
+  }
+  .number-field__decrement-button-container--is-disabled {
+    opacity: var(--opacity-disabled);
+  }
+  .number-field__decrement-button-content-container {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .number-field__increment-button-container {
+    position: absolute;
+    inset-inline-end: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    border-inline-start-width: 1px;
+    border-color: color-mix(in oklab, var(--color-field-placeholder) 15%, transparent);
+    border-top-end-radius: var(--radius-2xl);
+    border-bottom-end-radius: var(--radius-2xl);
+  }
+  .number-field__increment-button-container--is-disabled {
+    opacity: var(--opacity-disabled);
+  }
+  .number-field__increment-button-content-container {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding-inline: calc(var(--spacing) * 4);
+  }
+}

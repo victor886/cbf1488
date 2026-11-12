@@ -1,0 +1,25 @@
+@layer components {
+  .progress-circle__root {
+    align-items: center;
+    justify-content: center;
+  }
+  .progress-circle__root--is-disabled {
+    opacity: var(--opacity-disabled);
+  }
+  .progress-circle__value-label {
+    position: absolute;
+    color: var(--color-foreground);
+    font-family: var(--font-medium);
+    font-variant-numeric: tabular-nums;
+  }
+  /* Value label - size */
+  .progress-circle__value-label--size-sm {
+    font-size: 6px;
+  }
+  .progress-circle__value-label--size-md {
+    font-size: 8px;
+  }
+  .progress-circle__value-label--size-lg {
+    font-size: 10px;
+  }
+}

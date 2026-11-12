@@ -1,0 +1,14 @@
+@layer components {
+  /* Column headers are structural labels — display font like other headings. */
+  .table__column-label {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  /** The primary body card relies on --shadow-surface for definition, which
+     * brutalism disables — replace it with a hard border like other cards.*/
+  .table__body--variant-primary {
+    border-width: 1px;
+    border-color: var(--color-border);
+  }
+}

@@ -1,0 +1,10 @@
+@layer components {
+  /** The surface relies on `--shadow-overlay` for definition, which brutalism
+     * disables; a hard border replaces it. Corners square automatically via the
+     * `--radius-*` scale. The component renders no text of its own, so there is
+     * no display-font override.*/
+  .morph-button__surface {
+    border-width: 1px;
+    border-color: var(--color-border);
+  }
+}

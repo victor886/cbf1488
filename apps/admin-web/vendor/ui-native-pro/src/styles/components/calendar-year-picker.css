@@ -1,0 +1,54 @@
+@layer components {
+  /** All `data-[...]:` prefixed utilities stay in calendar-year-picker.styles.ts:
+     * data selectors are Tailwind variants and cannot be applied to custom CSS
+     * classes.*/
+  .calendar-year-picker__trigger {
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    gap: calc(var(--spacing) * 1);
+  }
+  .calendar-year-picker__trigger-heading {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-family: var(--font-medium);
+    color: var(--color-foreground);
+  }
+  .calendar-year-picker__trigger-indicator {
+    align-items: center;
+    justify-content: center;
+  }
+  .calendar-year-picker__year-grid {
+    position: absolute;
+    inset-inline: 0;
+    z-index: 10;
+    overflow: hidden;
+    border-radius: var(--radius-2xl);
+    background-color: var(--color-overlay);
+    border-width: 1px;
+    border-color: var(--color-border);
+  }
+  .calendar-year-picker__year-grid-background {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+  }
+  .calendar-year-picker__year-grid-body-content {
+    padding: calc(var(--spacing) * 2);
+  }
+  .calendar-year-picker__year-cell {
+    margin-inline: calc(var(--spacing) * 0.5);
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-3xl);
+  }
+  .calendar-year-picker__year-cell-label {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-family: var(--font-medium);
+    text-align: center;
+    color: var(--color-foreground);
+  }
+}

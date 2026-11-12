@@ -1,0 +1,11 @@
+@layer components {
+  .dialog__content {
+    border-width: 1px;
+    border-color: var(--color-border);
+  }
+  .dialog__label {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}

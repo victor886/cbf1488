@@ -1,0 +1,7 @@
+@layer components {
+  .stepper__title, .stepper__indicator-number {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}

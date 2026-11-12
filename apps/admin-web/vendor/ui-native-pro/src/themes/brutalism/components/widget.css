@@ -1,0 +1,14 @@
+@layer components {
+  .widget__title {
+    font-family: var(--brutalism-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .widget__content {
+    border-width: 1px;
+    border-color: var(--color-border);
+  }
+  .widget__legend-item-dot {
+    border-radius: 0;
+  }
+}
